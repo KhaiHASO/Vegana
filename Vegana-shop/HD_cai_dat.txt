@@ -1,0 +1,12 @@
+
+- import project vào Spring Tool Suite or eclipse ( có install lombok nhá, vì mình ko dùng get/set mà dùng tv lombok).
+ 
+- import file vegana_store.sql vào mysql (workbench 8.0 >).
+
+- tài khoản admin:  tk:admin pass: 123123
+
+- config lại email trong file aplication.properties
+
+- 1 số lưu ý : lúc đăng ký vì mình get dữ liệu trường email từ db để gửi mail nên lúc đăng ký sẽ mất tầm 3 giây - 5 giây( ^^ !), order cũng vậy á 3-5s !
+
+*  *** Chúc bạn có trải nghiệm thú vị. tks! ***

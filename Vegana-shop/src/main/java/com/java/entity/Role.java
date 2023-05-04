@@ -22,8 +22,4 @@ public class Role {
 	@GeneratedValue
 	private Integer id;
 	private String roleName;
-	
-	@ManyToOne
-	@JoinColumn(name = "customerId")
-	private Customer customer;
 }

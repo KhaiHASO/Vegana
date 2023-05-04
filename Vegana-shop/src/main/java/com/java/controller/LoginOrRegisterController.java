@@ -78,7 +78,7 @@ public class LoginOrRegisterController extends CommonController {
 				+ " !</h3> Chúc mừng bạn đã đăng ký tài khoản thành công tại Vegana-Store!\r\n ");
 		Role role = new Role();
 		role.setRoleName("ROLE_USER");
-		role.setCustomer(customer);
+		///role.setCustomer(customer);
 		if (null != c) {
 			model.addAttribute("message", "Đăng kí thành công, xin mời đăng nhập!");
 			model.addAttribute("customer", customer);

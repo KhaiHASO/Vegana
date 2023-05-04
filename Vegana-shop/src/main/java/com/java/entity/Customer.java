@@ -38,7 +38,7 @@ public class Customer implements UserDetails, CredentialsContainer {
 	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
 	private Collection<Order> orders;
 	
-	@OneToMany(mappedBy = "customer")
+	@OneToMany(mappedBy = "id")
 	private Collection<Role> roles;
 
 	@Override

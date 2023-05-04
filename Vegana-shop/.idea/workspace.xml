@@ -1,73 +1,759 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1177a6ea-1c4a-4688-a58c-025f2933fc43" name="Default Changelist" comment="" />
+    <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HD_cai_dat.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/VeganaShopApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/config/PersistenceJPAConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/config/SpringSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/config/SuccessHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/AccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/CommonController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/ContactController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/IndexController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/LoadImageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/LoginOrRegisterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/MyErrorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/NotFoundController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/ProductDetailController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/ShopController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/ShoppingCartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/WishListController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/admin/CategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/admin/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/admin/IndexAdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/admin/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/admin/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/admin/ReportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/controller/admin/SuppliersController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/CartItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/CartItemWish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/MailInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/OrderDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/OrderExcelExporter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/entity/Supplier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/repository/CategoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/repository/CustomersRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/repository/OrderDetailRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/repository/OrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/repository/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/repository/SuppliersRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/service/OrderDetailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/service/SendMailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/service/ShoppingCartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/service/VeganaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/service/WishListService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/service/impl/SendMailServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/service/impl/ShoppingCartServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/java/com/java/service/impl/WishListServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/META-INF/additional-spring-configuration-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/css/atlantis.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/css/atlantis.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/css/atlantis.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/css/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/css/fonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/css/fonts.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/flaticon/Flaticon.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/flaticon/Flaticon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/flaticon/Flaticon.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/flaticon/Flaticon.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/flaticon/_flaticon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/flaticon/flaticon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/flaticon/flaticon.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/fontawesome/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/simple-line-icons/Simple-Line-Icons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/simple-line-icons/Simple-Line-Icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/simple-line-icons/Simple-Line-Icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/simple-line-icons/Simple-Line-Icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/simple-line-icons/Simple-Line-Icons.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/summernote/summernote.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/summernote/summernote.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/fonts/summernote/summernote.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/arashmil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/bg-404.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/bg-abstract.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/bg-abstract2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/blogpost.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/chadengle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example1-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example10-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example10.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example11-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example11.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example12-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example12.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example2-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example3-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example4-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example5-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example6-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example7-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example8-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example9-300x300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/example9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/logoinvoice.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product10.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product11.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product12.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/examples/product8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ae.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/af.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ai.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/al.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/am.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/an.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ao.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/as.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/at.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/au.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/aw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ax.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/az.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/be.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bj.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/br.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/by.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/bz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ca.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/catalonia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ci.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ck.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/co.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/cz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/de.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/dj.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/dk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/dm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/do.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/dz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ec.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/eg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/eh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/england.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/er.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/es.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/et.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/europeanunion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/fam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/fi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/fj.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/fk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/fm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/fo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/fr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ga.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/gy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/hk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/hm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/hn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/hr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ht.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/hu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/id.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/il.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/in.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/io.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/iq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/is.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/it.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/jm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/jo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/jp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ke.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/kg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/kh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ki.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/km.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/kn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/kp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/kr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/kw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/kz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/la.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/lb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/lc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/li.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/lk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/lr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/lt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/lu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/lv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ly.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/md.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/me.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ml.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ms.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/my.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/mz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/na.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/nc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/nf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ng.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ni.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/nl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/no.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/np.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/nr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/nu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/nz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/om.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/pw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/py.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/qa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/re.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/rs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ru.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/rw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/scotland.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/se.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/si.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sj.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/so.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/st.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/sz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/td.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/th.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tj.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/to.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/tz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ua.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ug.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/um.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/us.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/uy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/uz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/va.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/vc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ve.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/vg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/vi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/vn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/vu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/wales.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/wf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ws.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/ye.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/yt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/za.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/zm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/flags/zw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/icon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/img-shadow.gvdesign" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/img-shadow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/jm_denis.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/logo2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/logoalternatif.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/logoproduct.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/logoproduct2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/logoproduct3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/mlane.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/productimg/product1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/productimg/product2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/productimg/product3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/productimg/product4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/productimg/product5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/productimg/product6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/productimg/product7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/productimg/product8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/productimg/product9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/profile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/profile2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/sauro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/talha.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/img/visa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/atlantis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/atlantis.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/atlantis2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/core/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/core/jquery.3.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/core/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/chart-circle/circles.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/chart.js/chart.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/datatables/datatables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/jquery.vmap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/continents/jquery.vmap.africa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/continents/jquery.vmap.asia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/continents/jquery.vmap.australia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/continents/jquery.vmap.europe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/continents/jquery.vmap.north-america.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/continents/jquery.vmap.south-america.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.algeria.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.argentina.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.brazil.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.canada.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.croatia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.europe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.france.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.germany.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.greece.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.indonesia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.iran.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.iraq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.new_regions_france.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.russia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.serbia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.tunisia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.turkey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.ukraine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.usa.counties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.usa.districts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.usa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/sweetalert/sweetalert.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/plugin/webfont/webfont.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/setting-demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/js/setting-demo2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_background.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_components.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_flaticon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_layouts-colors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_layouts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_opacity.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_outlinefocus.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_plugins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_responsive-horizontal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_responsive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_activityfeed.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_alerts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_avatars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_badges.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_breadcrumbs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_charts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_colorinputs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_dropdowns.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_gutters.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_imagecheck.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_inputs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_listgroup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_loader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_maps.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_modals.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_navbars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_navsearch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_navtabs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_paginations.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_popovers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_progress.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_selectgroup.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_sliders.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_stamps.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/components/_timeline.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/plugins/_animate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/plugins/_datatables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/plugins/_jqueryscrollbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/plugins/_jqueryui.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/assets/sass/atlantis/plugins/_sweetalert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/account.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/blog-details-2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/blog-details-3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/blog-list-1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/blog-list-2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/blog-list-3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/cartlist.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/checkout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/compare.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/contact.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/error.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/faq.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/product-details-1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/product-details-2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/product-details-3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/product-list-1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/product-list-2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/product-list-3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/signin-up.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/custom/wishlist.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/vendor/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/vendor/images/ui-icons_444444_256x240.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/vendor/images/ui-icons_555555_256x240.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/vendor/images/ui-icons_777620_256x240.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/vendor/images/ui-icons_777777_256x240.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/vendor/images/ui-icons_cc0000_256x240.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/vendor/images/ui-icons_ffffff_256x240.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/vendor/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/css/vendor/slick.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/font-awesome/5.14.0/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/fonts/flaticon/Flaticon.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/fonts/flaticon/Flaticon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/fonts/flaticon/Flaticon.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/fonts/flaticon/Flaticon.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/fonts/flaticon/Flaticon.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/fonts/flaticon/Flaticond41d.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/fonts/flaticon/flaticon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/ad/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/ad/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/app-store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/avatar/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/avatar/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/avatar/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/avatar/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/avatar/05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/banner/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/banner/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/banner/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/banner/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/blog-details.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/list-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/list-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/blog/list-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/google-store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/pay-card/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/pay-card/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/pay-card/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/pay-card/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/images/product/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/js/custom/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/js/custom/price-range.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/js/custom/slick.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/js/vendor/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/js/vendor/jquery-1.12.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/js/vendor/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/js/vendor/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/static/js/vendor/slick.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/categories.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/customers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/editCategory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/editOrder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/editProduct.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/editSupplier.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/fragments/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/fragments/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/fragments/navbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/orders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/products.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/statistical.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/admin/suppliers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/fragments/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/fragments/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/fragments/nav.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/account.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/checkOut.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/checkout_success.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/loginOrRegister.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/notFound.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/productDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/shop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/shoppingCart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/main/resources/templates/site/wishList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/src/test/java/com/java/VeganaShopApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/Yến-mạch-hạnh-nhân-Dan-D-Pak-350g.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/banh-danisa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/banh-mac-ca.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/banh-mini-oreo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/banh-mizura.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/banh-noir.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/banh-orion-bon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/banh-orion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/banh-tik.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/chip-chip-panda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/coca-cola-original.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/coca-cola-plus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/coca-cola.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/den_mk046_1_a81915dd1c25413e9af8df78f3b7956b_grande.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/den_mk048_2_2ecd969cffd94dfeaeac94f5e1e072c7_grande.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/den_mk052_1_0ddcbcb5ca3d4d3e8bb6ac99fcb7c23f_grande.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/den_mk053_1_a2f2eb28cdbc49f9bbe1329d3df2e85c_grande.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/hat-almonds.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/hat-hanh-nhan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/hat-nuts.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/hat-oc-cho.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/hat-occho.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/keo-anytime.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/keo-doublemint.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/lipton-tea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/milo-thung.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/nestle-milo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/nuoc-7-up.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/nuoc-aquafina.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/nuoc-mirinda-cam.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/nuoc-mountain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/nuoc-revive.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-bap-ngot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-bi-do.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-crabme.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-flutes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-martys.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-nhan-pillows.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-oishi-toms.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-phong-muc-oishi-indo-chips.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-pillows.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-poca-cay.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/snack-poca.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/sua-alpha.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/sua-bot-yoko.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/sua-dielac-grow-plus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/sua-grow-plus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/sua-hanh-nhan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/sua-oc-cho.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/sua-optimum.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/sua-pistachio.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/sua-tuoi-vinamilk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/tra-o-long.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana-shop/upload/image/xanh-nhat_vi159_1_b35061ac515949a3b18fd3175244404e_grande.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vegana_store.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="OpenAPI" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2Oov3i1I5bZkxof3ixaO5jWwKoG" />
+  <component name="ProjectId" id="2PJH15XZAx2ShVNejQG1MDIK42g" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="SwaggerCodegen">
-      <option name="activeConfigurationType" value="FILE" />
-      <option name="configurationPath" value="" />
-      <option name="customJreEnabled" value="false" />
-      <option name="customTemplatesPath" value="" />
-      <option name="enableDebugLogging" value="false" />
-      <option name="generateToPath" value="C:\Users\khaik\Desktop\T2 CONG NGHE PHAN MEM HDT\Vegana-shop\gen" />
-      <option name="generationParameters">
-        <list />
-      </option>
-      <option name="generatorPath" value="https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0/openapi-generator-cli-5.0.0.jar" />
-      <option name="jdkPath" value="" />
-      <option name="language" value="java" />
-      <option name="specificationPath" value="C:\Users\khaik\Desktop\T2 CONG NGHE PHAN MEM HDT\Vegana-shop\api.json" />
-      <method v="2" />
+    <configuration name="VeganaShopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="vegana-shop" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.java.VeganaShopApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1177a6ea-1c4a-4688-a58c-025f2933fc43" name="Default Changelist" comment="" />
-      <created>1682239553525</created>
+      <changelist id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="" />
+      <created>1683168051823</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682239553525</updated>
-      <workItem from="1682239555331" duration="377000" />
-      <workItem from="1682239953341" duration="808000" />
-      <workItem from="1682240776721" duration="236000" />
-      <workItem from="1682241022857" duration="1000" />
+      <updated>1683168051823</updated>
+      <workItem from="1683168053075" duration="499000" />
+      <workItem from="1683168570136" duration="134000" />
+      <workItem from="1683168717155" duration="372000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

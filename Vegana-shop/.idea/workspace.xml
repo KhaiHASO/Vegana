@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/LoginOrRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/LoginOrRegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/Nhom6_BaoCao_QLBHTP.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/Nhom6_DacTaUseCase_CuaHangBanThucPham.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/BaoCao_MTKPM.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/BaoCao_QLBHTP.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +60,8 @@
       <workItem from="1683198363204" duration="2530000" />
       <workItem from="1683202407515" duration="2601000" />
       <workItem from="1683206341389" duration="619000" />
+      <workItem from="1683208115725" duration="1381000" />
+      <workItem from="1683335832468" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>

@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="ok">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/BaoCao_MTKPM.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/BaoCao_QLBHTP.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/vegana.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/vegana.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +34,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="VeganaShopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -62,6 +61,7 @@
       <workItem from="1683206341389" duration="619000" />
       <workItem from="1683208115725" duration="1381000" />
       <workItem from="1683335832468" duration="9000" />
+      <workItem from="1683809038143" duration="2974000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>

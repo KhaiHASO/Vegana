@@ -32,7 +32,7 @@ public class SendMailServiceImpl implements SendMailService {
 			MimeMessage mesage = sender.createMimeMessage();
 			MimeMessageHelper messhelper = new MimeMessageHelper(mesage, true, "utf-8");
 
-			messhelper.setFrom("Vegana@gmail.com");
+			messhelper.setFrom("hotboypheda@gmail.com");
 			messhelper.setTo(to);
 			messhelper.setSubject(subject);
 			messhelper.setText(body, true);

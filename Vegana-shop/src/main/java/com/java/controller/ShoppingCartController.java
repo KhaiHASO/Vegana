@@ -4,36 +4,29 @@ import java.security.Principal;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
+import com.java.entity.*;
+import com.java.repository.*;
+import com.java.service.CartService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.java.entity.CartItem;
-import com.java.entity.Customer;
-import com.java.entity.Order;
-import com.java.entity.OrderDetail;
-import com.java.entity.Product;
-import com.java.repository.CustomersRepository;
-import com.java.repository.OrderDetailRepository;
-import com.java.repository.OrderRepository;
-import com.java.repository.ProductRepository;
+import org.springframework.web.bind.annotation.*;
 
 import com.java.service.SendMailService;
 import com.java.service.ShoppingCartService;
 import com.java.service.WishListService;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class ShoppingCartController extends CommonController {
@@ -62,6 +55,15 @@ public class ShoppingCartController extends CommonController {
 	@Autowired
 	HttpSession session;
 
+	@Autowired
+	CartRepository cartRepository;
+
+	@Autowired
+	CartService cartService;
+
+	@Autowired
+	CartProductViewRepository cartProductViewRepository;
+
 	public ShoppingCartController(ProductRepository productRepository, OrderRepository orderRepository,
 			OrderDetailRepository orderDetailRepository, ShoppingCartService shoppingCartService,
 			CustomersRepository customersRepository, SendMailService sendMailService, WishListService wishListService) {
@@ -74,7 +76,7 @@ public class ShoppingCartController extends CommonController {
 		this.wishListService = wishListService;
 	}
 
-	@GetMapping(value = "/carts")
+/*	@GetMapping(value = "/carts")
 	public String shoppingCart(Model model) {
 		Collection<CartItem> cartItems = shoppingCartService.getCartItems();
 		model.addAttribute("cartItems", cartItems);
@@ -90,14 +92,37 @@ public class ShoppingCartController extends CommonController {
 		model.addAttribute("totalCartItems", shoppingCartService.getCount());
 		
 		return "site/shoppingCart";
+	}*/
+
+	@GetMapping(value = "/carts")
+	public String shoppingCart(Model model) {
+		// Tải giỏ hàng từ cơ sở dữ liệu
+		Collection<CartProductViewDTO> cartProductViewDTO = cartProductViewRepository.getCartProductViewByCustomerId("khai00");
+
+		// Thêm giỏ hàng vào mô hình
+		model.addAttribute("cartProductViewDTO", cartProductViewDTO);
+
+
+		// Tính toán tổng giá trị giỏ hàng
+		double thanhtien = 0;
+		for (CartProductViewDTO cart : cartProductViewDTO) {
+			double price = cart.getTotalPrice();
+			thanhtien += price;
+		}
+		model.addAttribute("totalPrice", thanhtien);
+
+		// Các thông tin khác (nếu cần)
+		//model.addAttribute("totalCartItemWishs", wishListService.getCount());
+	  //model.addAttribute("totalCartItems", shoppingCartService.getCount());
+
+		return "site/shoppingCart";
 	}
 
-	// add cartItem
-	@GetMapping(value = "/addToCart")
-	public String add(@RequestParam("productId") Integer productId, HttpServletRequest request, Model model) {
+
+/*	@GetMapping(value = "/addToCart")
+	public String add(@RequestParam("productId") Integer productId, @RequestParam("customerId") String customerId, HttpServletRequest request, Model model) {
 
 		Product product = productRepository.findById(productId).orElse(null);
-
 		session = request.getSession();
 		Collection<CartItem> cartItems = shoppingCartService.getCartItems();
 		if (product != null) {
@@ -106,14 +131,59 @@ public class ShoppingCartController extends CommonController {
 			item.setQuantity(1);
 			item.setProduct(product);
 			item.setProductId(productId);
+			item.setCustomerId(customerId);
 			shoppingCartService.add(item);
 		}
 		session.setAttribute("cartItems", cartItems);
 		model.addAttribute("totalCartItemWishs", wishListService.getCount());
 		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-		
+
 		return "redirect:/carts";
+	}*/
+
+
+
+
+	@GetMapping(value = "/addToCart")
+	public String add(@RequestParam("productId") Integer productId, HttpServletRequest request, Model model) {
+
+		Product product = productRepository.findById(productId).orElse(null);
+		session = request.getSession();
+
+
+		Cart cart = new Cart("khai00",productId,1,product.getPrice());
+		cartRepository.updateOrInsertIntoCart("khai00",productId);
+		if (product != null) {
+			Cart item = new Cart();
+			BeanUtils.copyProperties(product, item);
+			item.setQuantity(1);
+			item.setProductId(product.getProductId());
+			item.setProductId(productId);
+			item.setCustomerId("khai00");
+		}
+		session.setAttribute("cart", cart);
+		//model.addAttribute("totalCartItemWishs", wishListService.getCount());
+		//model.addAttribute("totalCartItems", shoppingCartService.getCount());
+
+		return "redirect:" + request.getHeader("Referer");
 	}
+
+
+
+	@PutMapping(value = "/updateCart")
+	public String updateCart(@RequestBody CartProductViewDTO[] cartProductViewDTOs, Model model,
+							 RedirectAttributes rs) {
+		// Duyệt qua danh sách các sản phẩm trong giỏ hàng để cập nhật
+		for (CartProductViewDTO item : cartProductViewDTOs) {
+			// Thực hiện cập nhật giỏ hàng cho từng sản phẩm
+			cartService.updateCart(item);
+		}
+		// Sau khi cập nhật thành công, bạn có thể thực hiện các thao tác khác, ví dụ: điều hướng người dùng đến trang giỏ hàng hoặc trang khác
+		return "site/shoppingCart"; // Điều hướng người dùng đến trang giỏ hàng sau khi cập nhật
+	}
+
+
+
 
 	// delete cartItem
 	@SuppressWarnings("unlikely-arg-type")

@@ -1,19 +1,11 @@
 package com.java.controller;
 
-import java.security.Principal;
-import java.text.SimpleDateFormat;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.transaction.Transactional;
-
 import com.java.entity.*;
 import com.java.repository.*;
 import com.java.service.CartService;
+import com.java.service.SendMailService;
+import com.java.service.ShoppingCartService;
+import com.java.service.WishListService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -24,10 +16,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import com.java.service.SendMailService;
-import com.java.service.ShoppingCartService;
-import com.java.service.WishListService;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.transaction.Transactional;
+import java.security.Principal;
+import java.text.SimpleDateFormat;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Map;
 
 @Controller
 public class ShoppingCartController extends CommonController {
@@ -65,6 +61,8 @@ public class ShoppingCartController extends CommonController {
 	@Autowired
 	CartProductViewRepository cartProductViewRepository;
 
+	String CUSTOMER_ID;
+
 	public ShoppingCartController(ProductRepository productRepository, OrderRepository orderRepository,
 			OrderDetailRepository orderDetailRepository, ShoppingCartService shoppingCartService,
 			CustomersRepository customersRepository, SendMailService sendMailService, WishListService wishListService) {
@@ -77,32 +75,23 @@ public class ShoppingCartController extends CommonController {
 		this.wishListService = wishListService;
 	}
 
-/*	@GetMapping(value = "/carts")
-	public String shoppingCart(Model model) {
-		Collection<CartItem> cartItems = shoppingCartService.getCartItems();
-		model.addAttribute("cartItems", cartItems);
-		model.addAttribute("total", shoppingCartService.getAmount());
-		double totalPrice = 0;
-		for (CartItem cartItem : cartItems) {
-			double price = cartItem.getQuantity() * cartItem.getProduct().getPrice();
-			totalPrice += price - (price * cartItem.getProduct().getDiscount() / 100);
+	@GetMapping(value = "/carts")
+	public String shoppingCart(Model model, HttpServletRequest request, Principal principal) {
+
+		// Kiểm tra xem người dùng đã đăng nhập hay chưa
+		if (principal == null) {
+			// Chưa đăng nhập, chuyển hướng đến trang đăng nhập
+			return "redirect:/login";
 		}
 
-		model.addAttribute("totalPrice", totalPrice);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-		
-		return "site/shoppingCart";
-	}*/
+		Customer c = customersRepository.FindByEmail(principal.getName()).get();
+		String customerId = c.getCustomerId();
 
-	@GetMapping(value = "/carts")
-	public String shoppingCart(Model model) {
 		// Tải giỏ hàng từ cơ sở dữ liệu
-		Collection<CartProductViewDTO> cartProductViewDTO = cartProductViewRepository.getCartProductViewByCustomerId("khai00");
+		Collection<CartProductViewDTO> cartProductViewDTO = cartProductViewRepository.getCartProductViewByCustomerId(customerId);
 
 		// Thêm giỏ hàng vào mô hình
 		model.addAttribute("cartProductViewDTO", cartProductViewDTO);
-
 
 		// Tính toán tổng giá trị giỏ hàng
 		double thanhtien = 0;
@@ -113,68 +102,56 @@ public class ShoppingCartController extends CommonController {
 		model.addAttribute("totalPrice", thanhtien);
 
 		// Các thông tin khác (nếu cần)
-		//model.addAttribute("totalCartItemWishs", wishListService.getCount());
-	  //model.addAttribute("totalCartItems", shoppingCartService.getCount());
+		// model.addAttribute("totalCartItemWishs", wishListService.getCount());
+		// model.addAttribute("totalCartItems", shoppingCartService.getCount());
+		session = request.getSession();
+		session.setAttribute("customerId", customerId);
+		System.out.println(customerId);
+		CUSTOMER_ID=customerId;
 
 		return "site/shoppingCart";
 	}
 
-
-/*	@GetMapping(value = "/addToCart")
-	public String add(@RequestParam("productId") Integer productId, @RequestParam("customerId") String customerId, HttpServletRequest request, Model model) {
-
-		Product product = productRepository.findById(productId).orElse(null);
-		session = request.getSession();
-		Collection<CartItem> cartItems = shoppingCartService.getCartItems();
-		if (product != null) {
-			CartItem item = new CartItem();
-			BeanUtils.copyProperties(product, item);
-			item.setQuantity(1);
-			item.setProduct(product);
-			item.setProductId(productId);
-			item.setCustomerId(customerId);
-			shoppingCartService.add(item);
-		}
-		session.setAttribute("cartItems", cartItems);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-
-		return "redirect:/carts";
-	}*/
-
-
-
-
 	@GetMapping(value = "/addToCart")
-	public String add(@RequestParam("productId") Integer productId, HttpServletRequest request, Model model) {
+	public String add(@RequestParam("productId") Integer productId, HttpServletRequest request, Principal principal) {
+
+		// Kiểm tra xem người dùng đã đăng nhập hay chưa
+		if (principal == null) {
+			// Chưa đăng nhập, chuyển hướng đến trang đăng nhập
+			return "redirect:/login";
+		}
+
+		// Đã đăng nhập, tiếp tục thêm sản phẩm vào giỏ hàng
+		Customer c = customersRepository.FindByEmail(principal.getName()).get();
+		String customerId = c.getCustomerId();
+		System.out.println(customerId);
 
 		Product product = productRepository.findById(productId).orElse(null);
 		session = request.getSession();
 
+		Cart cart = new Cart(customerId, productId, 1, product.getPrice());
+		cartRepository.updateOrInsertIntoCart(customerId, productId);
 
-		Cart cart = new Cart("khai00",productId,1,product.getPrice());
-		cartRepository.updateOrInsertIntoCart("khai00",productId);
-		if (product != null) {
-			Cart item = new Cart();
-			BeanUtils.copyProperties(product, item);
-			item.setQuantity(1);
-			item.setProductId(product.getProductId());
-			item.setProductId(productId);
-			item.setCustomerId("khai00");
-		}
+		Cart item = new Cart();
+		BeanUtils.copyProperties(product, item);
+		item.setQuantity(1);
+		item.setProductId(product.getProductId());
+		item.setProductId(productId);
+		item.setCustomerId(customerId);
+
 		session.setAttribute("cart", cart);
-		//model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		//model.addAttribute("totalCartItems", shoppingCartService.getCount());
-
+		session.setAttribute("customerId", customerId);
 		return "redirect:" + request.getHeader("Referer");
 	}
 
 
 
+
 	@PutMapping(value = "/updateCart")
-	public ResponseEntity<String> updateCart(@RequestBody Map<String, String> payload) {
+	public ResponseEntity<String> updateCart(@RequestBody Map<String, String> payload,HttpServletRequest request) {
 		String name = payload.get("name");
 		int productId = Integer.parseInt(payload.get("productId"));
+		String customerId = (String) session.getAttribute("customerId");
 		int quantity = Integer.parseInt(payload.get("quantity"));
 		double price = Double.parseDouble(payload.get("price"));
 		double totalPrice = Double.parseDouble(payload.get("totalPrice"));
@@ -184,7 +161,7 @@ public class ShoppingCartController extends CommonController {
 		// You should validate the input here
 
 		CartProductViewDTO cartProductViewDTO = new CartProductViewDTO();
-		cartProductViewDTO.setCustomerId("khai00");
+		cartProductViewDTO.setCustomerId(customerId);
 		cartProductViewDTO.setName(name);
 		cartProductViewDTO.setProductId(productId);
 		cartProductViewDTO.setQuantity(quantity);
@@ -192,16 +169,18 @@ public class ShoppingCartController extends CommonController {
 		cartProductViewDTO.setTotalPrice(totalPrice);
 		cartProductViewDTO.setImage(image);
 		cartProductViewDTO.setDiscount(discount);
-		System.out.println(cartProductViewDTO.toString());
+		System.out.println(cartProductViewDTO);
 
 		cartService.updateCart(cartProductViewDTO);
+		session = request.getSession();
+		session.setAttribute("customerId", customerId);
 		return ResponseEntity.ok("Cart updated");
 	}
 
 	@DeleteMapping("/deleteCartItem/{customerId}/{productId}")
-	public ResponseEntity<?> deleteCartItem(@PathVariable("customerId") String customerId, @PathVariable("productId") Integer productId) {
+	public ResponseEntity<?> deleteCartItem(@PathVariable("productId") Integer productId) {
 		try {
-			cartRepository.deleteByCustomerIdAndProductId(customerId, productId);
+			cartRepository.deleteByCustomerIdAndProductId(CUSTOMER_ID, productId);
 			return ResponseEntity.ok().build();
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error while deleting cart item");

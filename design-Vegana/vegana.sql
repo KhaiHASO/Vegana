@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 18/05/2023 14:20:22
+ Date: 18/05/2023 23:19:17
 */
 
 SET NAMES utf8mb4;
@@ -32,13 +32,13 @@ CREATE TABLE `carts`  (
   INDEX `productId_idx`(`productId` ASC) USING BTREE,
   CONSTRAINT `customerId_fk` FOREIGN KEY (`customerId`) REFERENCES `customers` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `productId_fk` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 83 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 122 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of carts
 -- ----------------------------
 BEGIN;
-INSERT INTO `carts` (`cartId`, `customerId`, `productId`, `quantity`, `price`) VALUES (114, 'khai00', 27, 1, 360), (115, 'khai00', 25, 1, 270);
+INSERT INTO `carts` (`cartId`, `customerId`, `productId`, `quantity`, `price`) VALUES (114, 'khai00', 27, 2, 720), (115, 'khai00', 25, 1, 270), (118, 'khai00', 4, 1, 38), (119, 'khai00', 8, 1, 50), (120, 'khai00', 12, 1, 100), (121, 'khai00', 38, 4, 118.75);
 COMMIT;
 
 -- ----------------------------
@@ -226,7 +226,7 @@ CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `bill_view` AS select `o`
 -- View structure for cart_product_view
 -- ----------------------------
 DROP VIEW IF EXISTS `cart_product_view`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `cart_product_view` AS select `c`.`cartId` AS `cartId`,`c`.`customerId` AS `customerId`,`p`.`name` AS `name`,`p`.`image` AS `image`,`c`.`productId` AS `productId`,`c`.`quantity` AS `quantity`,`p`.`discount` AS `discount`,(`p`.`price` - ((`p`.`price` * `p`.`discount`) / 100)) AS `price`,`c`.`price` AS `totalPrice` from (`carts` `c` join `products` `p` on((`c`.`productId` = `p`.`productId`)));
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `cart_product_view` AS select `c`.`cartId` AS `cartId`,`c`.`customerId` AS `customerId`,`p`.`name` AS `name`,`p`.`image` AS `image`,`c`.`productId` AS `productId`,`c`.`quantity` AS `quantity`,`p`.`discount` AS `discount`,(`p`.`price` - ((`p`.`price` * `p`.`discount`) / 100)) AS `price`,((`p`.`price` - ((`p`.`price` * `p`.`discount`) / 100)) * `c`.`quantity`) AS `totalPrice` from (`carts` `c` join `products` `p` on((`c`.`productId` = `p`.`productId`)));
 
 -- ----------------------------
 -- Procedure structure for UpdateOrInsertIntoCart

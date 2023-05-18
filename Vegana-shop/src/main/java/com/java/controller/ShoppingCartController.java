@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -171,17 +172,41 @@ public class ShoppingCartController extends CommonController {
 
 
 	@PutMapping(value = "/updateCart")
-	public String updateCart(@RequestBody CartProductViewDTO[] cartProductViewDTOs, Model model,
-							 RedirectAttributes rs) {
-		// Duyệt qua danh sách các sản phẩm trong giỏ hàng để cập nhật
-		for (CartProductViewDTO item : cartProductViewDTOs) {
-			// Thực hiện cập nhật giỏ hàng cho từng sản phẩm
-			cartService.updateCart(item);
-		}
-		// Sau khi cập nhật thành công, bạn có thể thực hiện các thao tác khác, ví dụ: điều hướng người dùng đến trang giỏ hàng hoặc trang khác
-		return "site/shoppingCart"; // Điều hướng người dùng đến trang giỏ hàng sau khi cập nhật
+	public ResponseEntity<String> updateCart(@RequestBody Map<String, String> payload) {
+		String name = payload.get("name");
+		int productId = Integer.parseInt(payload.get("productId"));
+		int quantity = Integer.parseInt(payload.get("quantity"));
+		double price = Double.parseDouble(payload.get("price"));
+		double totalPrice = Double.parseDouble(payload.get("totalPrice"));
+		String image = payload.get("image");
+		double discount = Double.parseDouble(payload.get("discount"));
+
+		// You should validate the input here
+
+		CartProductViewDTO cartProductViewDTO = new CartProductViewDTO();
+		cartProductViewDTO.setCustomerId("khai00");
+		cartProductViewDTO.setName(name);
+		cartProductViewDTO.setProductId(productId);
+		cartProductViewDTO.setQuantity(quantity);
+		cartProductViewDTO.setPrice(price);
+		cartProductViewDTO.setTotalPrice(totalPrice);
+		cartProductViewDTO.setImage(image);
+		cartProductViewDTO.setDiscount(discount);
+		System.out.println(cartProductViewDTO.toString());
+
+		cartService.updateCart(cartProductViewDTO);
+		return ResponseEntity.ok("Cart updated");
 	}
 
+	@DeleteMapping("/deleteCartItem/{customerId}/{productId}")
+	public ResponseEntity<?> deleteCartItem(@PathVariable("customerId") String customerId, @PathVariable("productId") Integer productId) {
+		try {
+			cartRepository.deleteByCustomerIdAndProductId(customerId, productId);
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error while deleting cart item");
+		}
+	}
 
 
 

@@ -17,7 +17,7 @@ public class CartProductViewDTO {
     private double price;
     private double totalPrice;
     private String image;
-    private int discount;
+    private double discount;
 
     @Override
     public String toString() {

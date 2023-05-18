@@ -11,11 +11,35 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 11/05/2023 20:32:42okk
+ Date: 18/05/2023 14:20:22
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for carts
+-- ----------------------------
+DROP TABLE IF EXISTS `carts`;
+CREATE TABLE `carts`  (
+  `cartId` int NOT NULL AUTO_INCREMENT,
+  `customerId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `productId` int NULL DEFAULT NULL,
+  `quantity` int NULL DEFAULT NULL,
+  `price` double NULL DEFAULT NULL,
+  PRIMARY KEY (`cartId`) USING BTREE,
+  INDEX `customerId_idx`(`customerId` ASC) USING BTREE,
+  INDEX `productId_idx`(`productId` ASC) USING BTREE,
+  CONSTRAINT `customerId_fk` FOREIGN KEY (`customerId`) REFERENCES `customers` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `productId_fk` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 83 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of carts
+-- ----------------------------
+BEGIN;
+INSERT INTO `carts` (`cartId`, `customerId`, `productId`, `quantity`, `price`) VALUES (114, 'khai00', 27, 1, 360), (115, 'khai00', 25, 1, 270);
+COMMIT;
 
 -- ----------------------------
 -- Table structure for categories
@@ -91,7 +115,7 @@ CREATE TABLE `orderdetails`  (
   INDEX `FK5pie1uapfd704usnm2loi3tex`(`productId` ASC) USING BTREE,
   CONSTRAINT `FK5pie1uapfd704usnm2loi3tex` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `orderDetailId` FOREIGN KEY (`orderId`) REFERENCES `orders` (`orderId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of orderdetails
@@ -115,19 +139,16 @@ CREATE TABLE `orders`  (
   `requireDate` date NULL DEFAULT NULL,
   `total_price` double NULL DEFAULT NULL,
   `customerId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `orderDetailId` int NULL DEFAULT NULL,
   PRIMARY KEY (`orderId`) USING BTREE,
   INDEX `FK1bpj2iini89gbon333nm7tvht`(`customerId` ASC) USING BTREE,
-  INDEX `FK1gy3b3hqr3p2p1y5i8xuj6l5h`(`orderDetailId` ASC) USING BTREE,
-  CONSTRAINT `customerID` FOREIGN KEY (`customerId`) REFERENCES `customers` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `oderDetail` FOREIGN KEY (`orderDetailId`) REFERENCES `orderdetails` (`orderDetailId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+  CONSTRAINT `customerID` FOREIGN KEY (`customerId`) REFERENCES `customers` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
 BEGIN;
-INSERT INTO `orders` (`orderId`, `address`, `amount`, `description`, `orderDate`, `phone`, `receiver`, `requireDate`, `total_price`, `customerId`, `orderDetailId`) VALUES (42, '01 Vo Van Ngan Street', 0, 'Giao lẹ dùm', '2023-05-11', '0367151727', 'Khai Phan', NULL, 114, 'khai00', NULL), (43, '01 Vo Van Ngan Street', 0, 'Giao lẹ dùm', '2023-05-11', '0367151727', 'Khai Phan', NULL, 433, 'khai00', NULL);
+INSERT INTO `orders` (`orderId`, `address`, `amount`, `description`, `orderDate`, `phone`, `receiver`, `requireDate`, `total_price`, `customerId`) VALUES (42, '01 Vo Van Ngan Street', 0, 'Giao lẹ dùm', '2023-05-11', '0367151727', 'Khai Phan', NULL, 114, 'khai00'), (43, '01 Vo Van Ngan Street', 0, 'Giao lẹ dùm', '2023-05-11', '0367151727', 'Khai Phan', NULL, 433, 'khai00');
 COMMIT;
 
 -- ----------------------------
@@ -166,17 +187,14 @@ DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles`  (
   `id` int NOT NULL,
   `roleName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `customerId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `FKcotftqap7by5m4ibph3ss3xvo`(`customerId` ASC) USING BTREE,
-  CONSTRAINT `FKcotftqap7by5m4ibph3ss3xvo` FOREIGN KEY (`customerId`) REFERENCES `customers` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of roles
 -- ----------------------------
 BEGIN;
-INSERT INTO `roles` (`id`, `roleName`, `customerId`) VALUES (0, 'ROLE_CUSTOMER', NULL), (1, 'ROLE_ADMIN', NULL);
+INSERT INTO `roles` (`id`, `roleName`) VALUES (0, 'ROLE_CUSTOMER'), (1, 'ROLE_ADMIN');
 COMMIT;
 
 -- ----------------------------
@@ -197,5 +215,124 @@ CREATE TABLE `suppliers`  (
 BEGIN;
 INSERT INTO `suppliers` (`id`, `email`, `name`, `phone`) VALUES (1, 'vinamilk@gmail.com', 'Vinamilk', '0915999999'), (2, 'nestle@gmail.com', 'Nestle', '0915999988'), (3, 'snack@gmail.com', 'Snack', '0915999966'), (4, 'cookies@gmail.com', 'Cookies', '0915999666'), (5, 'pepsicola@gmail.com', 'Pepsi Cola', '0915998888'), (6, 'bibica@gmail.com', 'Bibica', '0915998668');
 COMMIT;
+
+-- ----------------------------
+-- View structure for bill_view
+-- ----------------------------
+DROP VIEW IF EXISTS `bill_view`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `bill_view` AS select `o`.`orderId` AS `orderId`,`o`.`customerId` AS `customerId`,`c`.`fullname` AS `fullname`,`o`.`phone` AS `phone`,`o`.`address` AS `address`,`o`.`orderDate` AS `orderDate`,group_concat(concat(`pr`.`name`,' (Giá: ',round((`pr`.`price` - ((`pr`.`price` * `pr`.`discount`) / 100)),3),', Số lượng: ',`od`.`quantity`,')') separator ', ') AS `product_list`,format(`o`.`total_price`,3) AS `total_price` from (((`orders` `o` join `customers` `c` on((`o`.`customerId` = `c`.`customerId`))) join `orderdetails` `od` on((`o`.`orderId` = `od`.`orderId`))) join `products` `pr` on((`od`.`productId` = `pr`.`productId`))) group by `o`.`orderId`,`o`.`customerId`,`c`.`fullname`,`o`.`phone`,`o`.`address`,`o`.`orderDate`,`o`.`total_price`;
+
+-- ----------------------------
+-- View structure for cart_product_view
+-- ----------------------------
+DROP VIEW IF EXISTS `cart_product_view`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `cart_product_view` AS select `c`.`cartId` AS `cartId`,`c`.`customerId` AS `customerId`,`p`.`name` AS `name`,`p`.`image` AS `image`,`c`.`productId` AS `productId`,`c`.`quantity` AS `quantity`,`p`.`discount` AS `discount`,(`p`.`price` - ((`p`.`price` * `p`.`discount`) / 100)) AS `price`,`c`.`price` AS `totalPrice` from (`carts` `c` join `products` `p` on((`c`.`productId` = `p`.`productId`)));
+
+-- ----------------------------
+-- Procedure structure for UpdateOrInsertIntoCart
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `UpdateOrInsertIntoCart`;
+delimiter ;;
+CREATE PROCEDURE `UpdateOrInsertIntoCart`(IN p_customerid VARCHAR(255), IN p_productid INT)
+BEGIN
+   DECLARE existing_quantity INT;
+   DECLARE existing_price DECIMAL(10, 2);
+   
+   SELECT quantity, price INTO existing_quantity, existing_price
+   FROM carts
+   WHERE customerid = p_customerid AND productid = p_productid;
+
+   IF existing_quantity IS NOT NULL THEN
+      UPDATE carts
+      SET quantity = existing_quantity + 1
+      WHERE customerid = p_customerid AND productid = p_productid;
+   ELSE
+      INSERT INTO carts(customerid, productid, quantity, price)
+      SELECT p_customerid, p_productid, 1, (p.price - (p.price * p.discount / 100)) * 1 -- Tính giá trị price từ số lượng, giá và khuyến mãi sản phẩm
+      FROM products p
+      WHERE p.productId = p_productid;
+   END IF;
+   
+   IF existing_quantity IS NOT NULL THEN
+      UPDATE carts
+      SET price = (price / existing_quantity) * (existing_quantity + 1)
+      WHERE customerid = p_customerid AND productid = p_productid;
+   END IF;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Triggers structure for table carts
+-- ----------------------------
+DROP TRIGGER IF EXISTS `delete_cart_item`;
+delimiter ;;
+CREATE TRIGGER `delete_cart_item` AFTER UPDATE ON `carts` FOR EACH ROW BEGIN
+  IF NEW.quantity = 0 THEN
+    DELETE FROM carts WHERE cartId = NEW.cartId;
+  END IF;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Triggers structure for table carts
+-- ----------------------------
+DROP TRIGGER IF EXISTS `check_product_quantity`;
+delimiter ;;
+CREATE TRIGGER `check_product_quantity` BEFORE UPDATE ON `carts` FOR EACH ROW BEGIN
+  DECLARE product_quantity INT;
+
+  SELECT quantity
+  INTO product_quantity
+  FROM products
+  WHERE productId = NEW.productId;
+
+  IF NEW.quantity > product_quantity THEN
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Số lượng mặt hàng trong giỏ hàng không được vượt quá số lượng mặt hàng có trong bảng sản phẩm';
+  END IF;
+
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Triggers structure for table customers
+-- ----------------------------
+DROP TRIGGER IF EXISTS `create_cart_for_new_customer`;
+delimiter ;;
+CREATE TRIGGER `create_cart_for_new_customer` AFTER INSERT ON `customers` FOR EACH ROW BEGIN
+    INSERT INTO carts (customerId) VALUES (NEW.customerId);
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Triggers structure for table orderdetails
+-- ----------------------------
+DROP TRIGGER IF EXISTS `decrease_quantity`;
+delimiter ;;
+CREATE TRIGGER `decrease_quantity` AFTER INSERT ON `orderdetails` FOR EACH ROW BEGIN
+    -- Giảm số lượng sản phẩm khi có đơn hàng được tạo
+    UPDATE products
+    SET quantity = quantity - NEW.quantity
+    WHERE productId = NEW.productId;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Triggers structure for table orders
+-- ----------------------------
+DROP TRIGGER IF EXISTS `orders_before_insert`;
+delimiter ;;
+CREATE TRIGGER `orders_before_insert` BEFORE INSERT ON `orders` FOR EACH ROW BEGIN 
+  IF NEW.orderDate IS NULL THEN 
+    SET NEW.orderDate = NOW(); 
+  END IF; 
+END
+;;
+delimiter ;
 
 SET FOREIGN_KEY_CHECKS = 1;

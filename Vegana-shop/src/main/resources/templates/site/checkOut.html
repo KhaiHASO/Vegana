@@ -128,37 +128,46 @@
               <div class="table-scroll">
                 <table class="table-list">
                   <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Product</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Price</th>
-                      <th scope="col">Quantity</th>
-                      <th scope="col">Total</th>
-                      <th scope="col">Action</th>
-                    </tr>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Action</th>
+                  </tr>
                   </thead>
                   <tbody>
-                    <tr th:each="item, iState : ${cartItems}">
-                      <td class="table-number"><h5>[[${iState.index + 1}]]</h5></td>
-                      <td class="table-product">
-                        <img th:src="@{'/loadImage?imageName='+${item.product.image}}" alt="product" />
-                      </td>
-                      <td class="table-name"><h5>[[${item.product.name}]]</h5></td>
-                      <td class="table-price"><h5>[['$'+ ${#numbers.formatDecimal(item.product.price - (item.product.price * item.product.discount/100), 1, 'DEFAULT', 0, 'DEFAULT')}]]</h5></td>
-                       <td class="table-quantity" style="color: black; font-weight: bold;">
-                    	[[${item.quantity}]]
+                  <tr th:each="item, iState : ${cartProductViewDTO}">
+                    <td th:text="${iState.index + 1}"></td>
+                    <td class="table-name">
+                      <h5 th:text="${item.name}"></h5>
                     </td>
-                      <td class="table-total"><h5>[['$'+${#numbers.formatDecimal((item.product.price - (item.product.price * item.product.discount/100)) * item.quantity, 1, 'DEFAULT', 0, 'DEFAULT')}]]</h5></td>
-                      <td class="table-action">
-                      <a th:href="@{/productDetail(productId=${item.product.productId})}"><i class="fas fa-eye"></i></a>
-                      
-                      <a href="#" th:data-id="${item.product.productId}" th:data-name="${item.product.name}"
-							onclick="showConfigModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
-							<i class="fas fa-trash-alt"></i>
-						</a>
+                    <td class="table-product">
+                      <img th:src="@{'/loadImage?imageName=' + ${item.image}}" alt="product" />
                     </td>
-                    </tr>
+                    <td class="table-price">
+                      <h5 th:text="${item.price}"></h5>
+                    </td>
+                    <td class="table-discount">
+                      <h5 th:text="${item.discount}"></h5>
+                    </td>
+                    <td class="table-quantity">
+                      <input type="number" min="1" id="quantityInput_[[${item.productId}]]" th:data-id="${item.productId}" th:data-price="${item.price}" th:data-image="${item.image}" th:data-discount="${item.discount}" th:data-name="${item.name}" th:value="${item.quantity}" onchange="updateQuantity(this.value, this.getAttribute('data-id'), this.getAttribute('data-price'), this.getAttribute('data-image'), this.getAttribute('data-discount'), this.getAttribute('data-name'), this.getAttribute('data-total'))">
+                      <span id="quantityError_[[${item.productId}]]" style="color: #000000; display: none;">Quantity must be at least 1</span>
+                    </td>
+                    <td class="table-total">
+                      <h5 id="totalPrice_[[${item.productId}]]" th:text="${item.totalPrice}" th:attr="data-total=${item.totalPrice}"></h5>
+                    </td>
+                    <td class="table-action">
+                      <a th:href="@{/productDetail(productId=${item.productId})}"><i class="fas fa-eye"></i></a>
+                      <a href="#" th:data-id="${item.productId}" th:data-name="${item.name}" onclick="showConfigModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
                   </tbody>
                 </table>
                 

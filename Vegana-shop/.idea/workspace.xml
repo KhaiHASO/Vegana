@@ -4,19 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="ok">
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/vegana.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/vegana.sql" afterDir="false" />
-    </list>
+    <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="xong 1 nua cai gio hang, kho vai ca lon" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="2PJH15XZAx2ShVNejQG1MDIK42g" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,11 +38,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../T6LapTrinhDiDong/github/FoodApp/springbootAPI" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.java.service.impl" />
+      <recent name="com.java.service" />
+      <recent name="com.java.entity" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="VeganaShopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -62,6 +78,10 @@
       <workItem from="1683208115725" duration="1381000" />
       <workItem from="1683335832468" duration="9000" />
       <workItem from="1683809038143" duration="2974000" />
+      <workItem from="1683906303583" duration="170000" />
+      <workItem from="1684295672652" duration="31753000" />
+      <workItem from="1684378589122" duration="1238000" />
+      <workItem from="1684382032485" duration="18663000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>
@@ -77,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683174719397</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="xong 1 nua cai gio hang, kho vai ca lon">
+      <created>1684356460455</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684356460455</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok" />
+    <MESSAGE value="xong 1 nua cai gio hang, kho vai ca lon" />
+    <option name="LAST_COMMIT_MESSAGE" value="xong 1 nua cai gio hang, kho vai ca lon" />
   </component>
 </project>

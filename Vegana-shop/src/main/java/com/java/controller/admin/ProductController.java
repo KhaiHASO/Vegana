@@ -65,7 +65,7 @@ public class ProductController extends CommonController{
 	}
 
 	@GetMapping(value = "/admin/products")
-	public String products(Model model, Principal principal) {
+	public String products(Model model) {
 		Product product = new Product();
 		model.addAttribute("product", product);
 

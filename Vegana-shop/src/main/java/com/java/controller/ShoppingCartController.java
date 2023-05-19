@@ -1,39 +1,29 @@
 package com.java.controller;
 
-import java.security.Principal;
-import java.text.SimpleDateFormat;
-import java.util.Collection;
-import java.util.Date;
+import com.java.entity.*;
+import com.java.repository.*;
+import com.java.service.CartService;
+import com.java.service.SendMailService;
+import com.java.service.ShoppingCartService;
+import com.java.service.WishListService;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
-
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.java.entity.CartItem;
-import com.java.entity.Customer;
-import com.java.entity.Order;
-import com.java.entity.OrderDetail;
-import com.java.entity.Product;
-import com.java.repository.CustomersRepository;
-import com.java.repository.OrderDetailRepository;
-import com.java.repository.OrderRepository;
-import com.java.repository.ProductRepository;
-
-import com.java.service.SendMailService;
-import com.java.service.ShoppingCartService;
-import com.java.service.WishListService;
+import java.security.Principal;
+import java.text.SimpleDateFormat;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Map;
 
 @Controller
 public class ShoppingCartController extends CommonController {
@@ -62,6 +52,17 @@ public class ShoppingCartController extends CommonController {
 	@Autowired
 	HttpSession session;
 
+	@Autowired
+	CartRepository cartRepository;
+
+	@Autowired
+	CartService cartService;
+
+	@Autowired
+	CartProductViewRepository cartProductViewRepository;
+
+	String CUSTOMER_ID;
+
 	public ShoppingCartController(ProductRepository productRepository, OrderRepository orderRepository,
 			OrderDetailRepository orderDetailRepository, ShoppingCartService shoppingCartService,
 			CustomersRepository customersRepository, SendMailService sendMailService, WishListService wishListService) {
@@ -75,45 +76,118 @@ public class ShoppingCartController extends CommonController {
 	}
 
 	@GetMapping(value = "/carts")
-	public String shoppingCart(Model model) {
-		Collection<CartItem> cartItems = shoppingCartService.getCartItems();
-		model.addAttribute("cartItems", cartItems);
-		model.addAttribute("total", shoppingCartService.getAmount());
-		double totalPrice = 0;
-		for (CartItem cartItem : cartItems) {
-			double price = cartItem.getQuantity() * cartItem.getProduct().getPrice();
-			totalPrice += price - (price * cartItem.getProduct().getDiscount() / 100);
+	public String shoppingCart(Model model, HttpServletRequest request, Principal principal) {
+
+		// Kiểm tra xem người dùng đã đăng nhập hay chưa
+		if (principal == null) {
+			// Chưa đăng nhập, chuyển hướng đến trang đăng nhập
+			return "redirect:/login";
 		}
 
-		model.addAttribute("totalPrice", totalPrice);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-		
+		Customer c = customersRepository.FindByEmail(principal.getName()).get();
+		String customerId = c.getCustomerId();
+
+		// Tải giỏ hàng từ cơ sở dữ liệu
+		Collection<CartProductViewDTO> cartProductViewDTO = cartProductViewRepository.getCartProductViewByCustomerId(customerId);
+
+		// Thêm giỏ hàng vào mô hình
+		model.addAttribute("cartProductViewDTO", cartProductViewDTO);
+
+		// Tính toán tổng giá trị giỏ hàng
+		double thanhtien = 0;
+		for (CartProductViewDTO cart : cartProductViewDTO) {
+			double price = cart.getTotalPrice();
+			thanhtien += price;
+		}
+		model.addAttribute("totalPrice", thanhtien);
+
+		// Các thông tin khác (nếu cần)
+		// model.addAttribute("totalCartItemWishs", wishListService.getCount());
+		// model.addAttribute("totalCartItems", shoppingCartService.getCount());
+		session = request.getSession();
+		session.setAttribute("customerId", customerId);
+		System.out.println(customerId);
+		CUSTOMER_ID=customerId;
+
 		return "site/shoppingCart";
 	}
 
-	// add cartItem
 	@GetMapping(value = "/addToCart")
-	public String add(@RequestParam("productId") Integer productId, HttpServletRequest request, Model model) {
+	public String add(@RequestParam("productId") Integer productId, HttpServletRequest request, Principal principal) {
+
+		// Kiểm tra xem người dùng đã đăng nhập hay chưa
+		if (principal == null) {
+			// Chưa đăng nhập, chuyển hướng đến trang đăng nhập
+			return "redirect:/login";
+		}
+
+		// Đã đăng nhập, tiếp tục thêm sản phẩm vào giỏ hàng
+		Customer c = customersRepository.FindByEmail(principal.getName()).get();
+		String customerId = c.getCustomerId();
+		System.out.println(customerId);
 
 		Product product = productRepository.findById(productId).orElse(null);
-
 		session = request.getSession();
-		Collection<CartItem> cartItems = shoppingCartService.getCartItems();
-		if (product != null) {
-			CartItem item = new CartItem();
-			BeanUtils.copyProperties(product, item);
-			item.setQuantity(1);
-			item.setProduct(product);
-			item.setProductId(productId);
-			shoppingCartService.add(item);
-		}
-		session.setAttribute("cartItems", cartItems);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-		
-		return "redirect:/carts";
+
+		Cart cart = new Cart(customerId, productId, 1, product.getPrice());
+		cartRepository.updateOrInsertIntoCart(customerId, productId);
+
+		Cart item = new Cart();
+		BeanUtils.copyProperties(product, item);
+		item.setQuantity(1);
+		item.setProductId(product.getProductId());
+		item.setProductId(productId);
+		item.setCustomerId(customerId);
+
+		session.setAttribute("cart", cart);
+		session.setAttribute("customerId", customerId);
+		return "redirect:" + request.getHeader("Referer");
 	}
+
+
+
+
+	@PutMapping(value = "/updateCart")
+	public ResponseEntity<String> updateCart(@RequestBody Map<String, String> payload,HttpServletRequest request) {
+		String name = payload.get("name");
+		int productId = Integer.parseInt(payload.get("productId"));
+		String customerId = (String) session.getAttribute("customerId");
+		int quantity = Integer.parseInt(payload.get("quantity"));
+		double price = Double.parseDouble(payload.get("price"));
+		double totalPrice = Double.parseDouble(payload.get("totalPrice"));
+		String image = payload.get("image");
+		double discount = Double.parseDouble(payload.get("discount"));
+
+		// You should validate the input here
+
+		CartProductViewDTO cartProductViewDTO = new CartProductViewDTO();
+		cartProductViewDTO.setCustomerId(customerId);
+		cartProductViewDTO.setName(name);
+		cartProductViewDTO.setProductId(productId);
+		cartProductViewDTO.setQuantity(quantity);
+		cartProductViewDTO.setPrice(price);
+		cartProductViewDTO.setTotalPrice(totalPrice);
+		cartProductViewDTO.setImage(image);
+		cartProductViewDTO.setDiscount(discount);
+		System.out.println(cartProductViewDTO);
+
+		cartService.updateCart(cartProductViewDTO);
+		session = request.getSession();
+		session.setAttribute("customerId", customerId);
+		return ResponseEntity.ok("Cart updated");
+	}
+
+	@DeleteMapping("/deleteCartItem/{customerId}/{productId}")
+	public ResponseEntity<?> deleteCartItem(@PathVariable("productId") Integer productId) {
+		try {
+			cartRepository.deleteByCustomerIdAndProductId(CUSTOMER_ID, productId);
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error while deleting cart item");
+		}
+	}
+
+
 
 	// delete cartItem
 	@SuppressWarnings("unlikely-arg-type")

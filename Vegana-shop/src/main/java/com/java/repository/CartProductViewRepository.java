@@ -15,7 +15,7 @@ public class CartProductViewRepository {
     }
 
     public List<CartProductViewDTO> getCartProductView() {
-        String sql = "SELECT cartId, customerId, productId, quantity, name, price,totalPrice, image, discount FROM cart_product_view";
+        String sql = "SELECT * FROM cart_product_view";
         return jdbcTemplate.query(sql, (rs, rowNum) -> {
             CartProductViewDTO cartProductView = new CartProductViewDTO();
             cartProductView.setCartId(rs.getInt("cartId"));
@@ -32,7 +32,7 @@ public class CartProductViewRepository {
     }
 
     public Collection<CartProductViewDTO> getCartProductViewByCustomerId(String customerId) {
-        String sql = "SELECT cartId, customerId, productId, quantity, name, price,totalPrice, image, discount FROM cart_product_view WHERE customerId = ?";
+        String sql = "SELECT * FROM cart_product_view WHERE customerId = ?";
         return jdbcTemplate.query(sql, (rs, rowNum) -> {
             CartProductViewDTO cartProductView = new CartProductViewDTO();
             cartProductView.setCartId(rs.getInt("cartId"));

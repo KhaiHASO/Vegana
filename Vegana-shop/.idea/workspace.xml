@@ -5,26 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="xong 1 nua cai gio hang, kho vai ca lon">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/entity/BillViewDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/entity/RevenueViewDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/repository/BillViewRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/CommonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ContactController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/MyErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/MyErrorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ProductDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ProductDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/WishListController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/CartItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/CartItemWish.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/service/ShoppingCartService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/service/WishListService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/service/impl/ShoppingCartServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/service/impl/WishListServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/checkOut.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/site/checkOut.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/wishList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/site/wishList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +55,10 @@
       <recent name="com.java.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.java.entity" />
+      <recent name="com.java.repository" />
       <recent name="com.java.service.impl" />
       <recent name="com.java.service" />
-      <recent name="com.java.entity" />
     </key>
   </component>
   <component name="RunManager">
@@ -118,7 +103,7 @@
       <workItem from="1684378589122" duration="1238000" />
       <workItem from="1684382032485" duration="18859000" />
       <workItem from="1684491814994" duration="1192000" />
-      <workItem from="1684502314132" duration="13429000" />
+      <workItem from="1684502314132" duration="20373000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>

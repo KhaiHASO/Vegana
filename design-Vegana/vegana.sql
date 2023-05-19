@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 20/05/2023 01:03:46
+ Date: 20/05/2023 03:01:54
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `carts`  (
 -- Records of carts
 -- ----------------------------
 BEGIN;
-INSERT INTO `carts` (`cartId`, `customerId`, `productId`, `quantity`, `price`) VALUES (122, 'khachhang00', NULL, NULL, NULL);
+INSERT INTO `carts` (`cartId`, `customerId`, `productId`, `quantity`, `price`) VALUES (122, 'khachhang00', NULL, NULL, NULL), (124, 'khai00', 3, 1, 45);
 COMMIT;
 
 -- ----------------------------
@@ -217,13 +217,19 @@ COMMIT;
 -- View structure for bill_view
 -- ----------------------------
 DROP VIEW IF EXISTS `bill_view`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `bill_view` AS select `o`.`orderId` AS `orderId`,`o`.`customerId` AS `customerId`,`c`.`fullname` AS `fullname`,`o`.`phone` AS `phone`,`o`.`address` AS `address`,`o`.`orderDate` AS `orderDate`,group_concat(concat(`pr`.`name`,' (Giá: ',round((`pr`.`price` - ((`pr`.`price` * `pr`.`discount`) / 100)),3),', Số lượng: ',`od`.`quantity`,')') separator ', ') AS `product_list`,format(`o`.`total_price`,3) AS `total_price` from (((`orders` `o` join `customers` `c` on((`o`.`customerId` = `c`.`customerId`))) join `orderdetails` `od` on((`o`.`orderId` = `od`.`orderId`))) join `products` `pr` on((`od`.`productId` = `pr`.`productId`))) group by `o`.`orderId`,`o`.`customerId`,`c`.`fullname`,`o`.`phone`,`o`.`address`,`o`.`orderDate`,`o`.`total_price`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `bill_view` AS select `o`.`orderId` AS `orderId`,`o`.`customerId` AS `customerId`,`c`.`fullname` AS `fullname`,`o`.`phone` AS `phone`,`o`.`address` AS `address`,`o`.`orderDate` AS `orderDate`,`od`.`status` AS `status`,group_concat(concat(`pr`.`name`,' (Giá: ',(`pr`.`price` - ((`pr`.`price` * `pr`.`discount`) / 100)),', Số lượng: ',`od`.`quantity`,')') separator ', ') AS `product_list`,`o`.`total_price` AS `total_price` from (((`orders` `o` join `customers` `c` on((`o`.`customerId` = `c`.`customerId`))) join `orderdetails` `od` on((`o`.`orderId` = `od`.`orderId`))) join `products` `pr` on((`od`.`productId` = `pr`.`productId`))) group by `o`.`orderId`,`o`.`customerId`,`c`.`fullname`,`o`.`phone`,`o`.`address`,`o`.`orderDate`,`od`.`status`,`o`.`total_price`;
 
 -- ----------------------------
 -- View structure for cart_product_view
 -- ----------------------------
 DROP VIEW IF EXISTS `cart_product_view`;
 CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `cart_product_view` AS select `c`.`cartId` AS `cartId`,`c`.`customerId` AS `customerId`,`p`.`name` AS `name`,`p`.`image` AS `image`,`c`.`productId` AS `productId`,`c`.`quantity` AS `quantity`,`p`.`discount` AS `discount`,(`p`.`price` - ((`p`.`price` * `p`.`discount`) / 100)) AS `price`,((`p`.`price` - ((`p`.`price` * `p`.`discount`) / 100)) * `c`.`quantity`) AS `totalPrice` from (`carts` `c` join `products` `p` on((`c`.`productId` = `p`.`productId`)));
+
+-- ----------------------------
+-- View structure for revenue_view
+-- ----------------------------
+DROP VIEW IF EXISTS `revenue_view`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `revenue_view` AS select sum(`od`.`total_price`) AS `total_revenue` from (`orderdetails` `od` join `orders` `o` on((`od`.`orderId` = `o`.`orderId`))) where (`od`.`status` = 'Đã Thanh Toán');
 
 -- ----------------------------
 -- Procedure structure for UpdateOrInsertIntoCart

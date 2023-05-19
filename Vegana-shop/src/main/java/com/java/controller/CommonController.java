@@ -16,14 +16,11 @@ import com.java.entity.Customer;
 import com.java.entity.Supplier;
 import com.java.repository.CategoryRepository;
 import com.java.repository.SuppliersRepository;
-import com.java.service.ShoppingCartService;
 
 @Controller
 @RequestMapping(value = "/")
 public class CommonController {
-	
-	@Autowired
-	ShoppingCartService shoppingCartService;
+
 
 	@Autowired
 	CategoryRepository categoryRepository;

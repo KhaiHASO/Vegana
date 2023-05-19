@@ -10,13 +10,13 @@ import com.java.repository.OrderRepository;
 
 @Service
 public class OrderDetailService {
-	
-	@Autowired
-	OrderRepository repo;
-	
-	public List<Order> listAll(){
-		
-		return (List<Order>) repo.findAll();
-	}
+
+    @Autowired
+    OrderRepository repo;
+
+    public List<Order> listAll(){
+
+        return (List<Order>) repo.findAll();
+    }
 
 }

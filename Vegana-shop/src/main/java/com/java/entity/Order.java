@@ -35,13 +35,9 @@ public class Order implements Serializable {
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date orderDate;
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="MM/dd/yyyy")
-	private Date requireDate;
 	private String receiver;
 	private String address;
 	private String description;
-	private Double amount;
 	@Column(name = "total_price")
 	private Double totalPrice;
 	

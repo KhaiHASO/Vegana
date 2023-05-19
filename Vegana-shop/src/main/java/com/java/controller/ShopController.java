@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.java.entity.Product;
 import com.java.repository.ProductRepository;
-import com.java.service.ShoppingCartService;
-import com.java.service.WishListService;
 
 @Controller
 public class ShopController extends CommonController {
@@ -27,11 +25,6 @@ public class ShopController extends CommonController {
 	@Autowired
 	ProductRepository productRepository;
 
-	@Autowired
-	ShoppingCartService shoppingCartService;
-	
-	@Autowired
-	WishListService wishListService;
 
 	// get products
 	@GetMapping(value = "/products")
@@ -50,9 +43,6 @@ public class ShopController extends CommonController {
 		}
 
 		model.addAttribute("productList", productPage);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-
 		return "site/shop";
 	}
 
@@ -83,9 +73,6 @@ public class ShopController extends CommonController {
 	public String productByCategory(Model model, @RequestParam("categoryId") Integer categoryId) {
 		List<Product> products = productRepository.listProductByCategory(categoryId);
 		model.addAttribute("productList", products);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-
 		return "site/shop";
 	}
 
@@ -94,9 +81,6 @@ public class ShopController extends CommonController {
 	public String productBySupplier(Model model, @RequestParam("supplierId") Integer supplierId) {
 		List<Product> products = productRepository.listProductBySupplier(supplierId);
 		model.addAttribute("productList", products);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-
 		return "site/shop";
 	}
 
@@ -108,9 +92,6 @@ public class ShopController extends CommonController {
 		List<Product> products = productRepository.searchProduct(keyword);
 
 		model.addAttribute("productList", products);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-		
 		return "site/shop";
 	}
 

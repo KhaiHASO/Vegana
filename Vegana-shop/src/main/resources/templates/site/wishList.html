@@ -73,28 +73,6 @@
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr th:each="item, iState : ${cartItemWishs}">
-                    <td class="table-number"><h5>[[${iState.index + 1}]]</h5></td>
-                    <td class="table-product">
-                      <img th:src="@{'/loadImage?imageName='+${item.product.image}}" alt="product" />
-                    </td>
-                    <td class="table-name"><h5>[[${item.product.name}]]</h5></td>
-                    <td class="table-price"><h5>[['$'+ ${#numbers.formatDecimal(item.product.price - (item.product.price * item.product.discount/100), 1, 'DEFAULT', 0, 'DEFAULT')}]]</h5></td>
-                    <td class="table-status"><h5>[[${#numbers.formatDecimal(item.product.discount, 1, 'DEFAULT', 0, 'DEFAULT') + '%'}]]</h5></td>
-                    <td class="table-shop">
-                      <a th:href="@{/addToCart(productId=${item.productId})}" class="btn btn-inline">
-                      	Add to Cart
-                      </a>
-                    </td>
-                    <td class="table-action">
-                      <a href="#"th:data-id="${item.product.productId}" th:data-name="${item.product.name}"
-							onclick="showConfigModalDialog(this.getAttribute('data-id'), this.getAttribute('data-name'))">
-                      	<i class="fas fa-trash-alt"></i>
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
               </table>
               
                <script>

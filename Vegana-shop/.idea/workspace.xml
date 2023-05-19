@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="xong 1 nua cai gio hang, kho vai ca lon" />
+    <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="xong 1 nua cai gio hang, kho vai ca lon">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/CommonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ContactController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/MyErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/MyErrorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ProductDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ProductDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/WishListController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/CartItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/CartItemWish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/service/ShoppingCartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/service/WishListService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/service/impl/ShoppingCartServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/service/impl/WishListServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/checkOut.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/site/checkOut.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/site/wishList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/site/wishList.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +67,9 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.java.service" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.java.service.impl" />
       <recent name="com.java.service" />
@@ -53,6 +77,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VeganaShopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="vegana-shop" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.java.VeganaShopApplication" />
@@ -81,7 +116,9 @@
       <workItem from="1683906303583" duration="170000" />
       <workItem from="1684295672652" duration="31753000" />
       <workItem from="1684378589122" duration="1238000" />
-      <workItem from="1684382032485" duration="18663000" />
+      <workItem from="1684382032485" duration="18859000" />
+      <workItem from="1684491814994" duration="1192000" />
+      <workItem from="1684502314132" duration="13429000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>

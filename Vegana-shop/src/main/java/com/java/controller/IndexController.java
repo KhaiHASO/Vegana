@@ -11,27 +11,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.java.entity.Product;
 import com.java.repository.ProductRepository;
-import com.java.service.ShoppingCartService;
-import com.java.service.WishListService;
 
 @Controller
 public class IndexController extends CommonController {
 
 	@Autowired
 	ProductRepository productRepository;
-	
-	@Autowired
-	ShoppingCartService shoppingCartService;
-	
-	@Autowired
-	WishListService wishListService;
 
 	@GetMapping(value = "/")
 	public String index(Model model) {
 		listproduct10(model);
 		topProduct10(model);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
 		
 		return "site/index";
 	}

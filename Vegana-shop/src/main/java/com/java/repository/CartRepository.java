@@ -27,7 +27,7 @@ public interface CartRepository extends JpaRepository<Cart, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM carts WHERE customer_id = :customerId", nativeQuery = true)
+    @Query(value = "DELETE FROM carts WHERE customerId = :customerId", nativeQuery = true)
     void emptyCart(@Param("customerId") String customerId);
 
     @Procedure(procedureName = "UpdateOrInsertIntoCart")

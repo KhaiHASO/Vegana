@@ -11,20 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.java.entity.Product;
 import com.java.repository.ProductRepository;
-import com.java.service.ShoppingCartService;
-import com.java.service.WishListService;
 
 @Controller
 public class ProductDetailController extends CommonController {
 
 	@Autowired
 	ProductRepository productRepository;
-	
-	@Autowired
-	ShoppingCartService shoppingCartService;
-	
-	@Autowired
-	WishListService wishListService;
 
 	// get productDetail
 	@GetMapping(value = "/productDetail")
@@ -35,8 +27,6 @@ public class ProductDetailController extends CommonController {
 		productByCategory(model, product.getCategory().getCategoryId());
 		
 		listproduct10(model);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
 		
 		return "site/productDetail";
 	}

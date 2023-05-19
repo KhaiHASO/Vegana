@@ -2,10 +2,7 @@ package com.java.controller;
 
 import com.java.entity.*;
 import com.java.repository.*;
-import com.java.service.CartService;
 import com.java.service.SendMailService;
-import com.java.service.ShoppingCartService;
-import com.java.service.WishListService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -41,12 +38,6 @@ public class ShoppingCartController extends CommonController {
 	CustomersRepository customersRepository;
 
 	@Autowired
-	ShoppingCartService shoppingCartService;
-	
-	@Autowired
-	WishListService wishListService;
-
-	@Autowired
 	SendMailService sendMailService;
 
 	@Autowired
@@ -55,24 +46,20 @@ public class ShoppingCartController extends CommonController {
 	@Autowired
 	CartRepository cartRepository;
 
-	@Autowired
-	CartService cartService;
+
+
 
 	@Autowired
 	CartProductViewRepository cartProductViewRepository;
 
 	String CUSTOMER_ID;
 
-	public ShoppingCartController(ProductRepository productRepository, OrderRepository orderRepository,
-			OrderDetailRepository orderDetailRepository, ShoppingCartService shoppingCartService,
-			CustomersRepository customersRepository, SendMailService sendMailService, WishListService wishListService) {
+	public ShoppingCartController(ProductRepository productRepository, OrderRepository orderRepository, OrderDetailRepository orderDetailRepository, CustomersRepository customersRepository, SendMailService sendMailService) {
 		this.productRepository = productRepository;
 		this.orderRepository = orderRepository;
 		this.orderDetailRepository = orderDetailRepository;
-		this.shoppingCartService = shoppingCartService;
 		this.customersRepository = customersRepository;
 		this.sendMailService = sendMailService;
-		this.wishListService = wishListService;
 	}
 
 	@GetMapping(value = "/carts")
@@ -110,6 +97,15 @@ public class ShoppingCartController extends CommonController {
 		CUSTOMER_ID=customerId;
 
 		return "site/shoppingCart";
+	}
+	private double tongdonhang(Collection<CartProductViewDTO> cartProductViewDTO)
+	{
+		double thanhtien = 0;
+		for (CartProductViewDTO cart : cartProductViewDTO) {
+			double price = cart.getTotalPrice();
+			thanhtien += price;
+		}
+		return thanhtien;
 	}
 
 	@GetMapping(value = "/addToCart")
@@ -171,7 +167,7 @@ public class ShoppingCartController extends CommonController {
 		cartProductViewDTO.setDiscount(discount);
 		System.out.println(cartProductViewDTO);
 
-		cartService.updateCart(cartProductViewDTO);
+		cartRepository.updateCart(cartProductViewDTO);
 		session = request.getSession();
 		session.setAttribute("customerId", customerId);
 		return ResponseEntity.ok("Cart updated");
@@ -188,48 +184,22 @@ public class ShoppingCartController extends CommonController {
 	}
 
 
-
-	// delete cartItem
-	@SuppressWarnings("unlikely-arg-type")
-	@GetMapping(value = "/remove/{id}")
-	public String remove(@PathVariable("id") Integer id, HttpServletRequest request, Model model) {
-		Product product = productRepository.findById(id).orElse(null);
-
-		Collection<CartItem> cartItems = shoppingCartService.getCartItems();
-		session = request.getSession();
-		if (product != null) {
-			CartItem item = new CartItem();
-			BeanUtils.copyProperties(product, item);
-			item.setProduct(product);
-			cartItems.remove(session);
-			shoppingCartService.remove(item);
-		}
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-		
-		return "redirect:/carts";
-	}
-
 	// show check out
 	@GetMapping(value = "/checkout")
 	public String checkOut(Model model) {
 
 		Order order = new Order();
 		model.addAttribute("order", order);
+		// Tải giỏ hàng từ cơ sở dữ liệu
+		Collection<CartProductViewDTO> cartProductViewDTO = cartProductViewRepository.getCartProductViewByCustomerId(CUSTOMER_ID);
+		// Thêm giỏ hàng vào mô hình
+		model.addAttribute("cartProductViewDTO", cartProductViewDTO);
 
-		Collection<CartItem> cartItems = shoppingCartService.getCartItems();
-		model.addAttribute("cartItems", cartItems);
-		model.addAttribute("total", shoppingCartService.getAmount());
-		model.addAttribute("NoOfItems", shoppingCartService.getCount());
-		double totalPrice = 0;
-		for (CartItem cartItem : cartItems) {
-			double price = cartItem.getQuantity() * cartItem.getProduct().getPrice();
-			totalPrice += price - (price * cartItem.getProduct().getDiscount() / 100);
-		}
+		model.addAttribute("total", tongdonhang(cartProductViewDTO));
+		model.addAttribute("NoOfItems", cartProductViewDTO.size());
 
-		model.addAttribute("totalPrice", totalPrice);
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
+		model.addAttribute("totalPrice", tongdonhang(cartProductViewDTO));
+		model.addAttribute("totalCartItems", cartProductViewDTO.size());
 
 		return "site/checkOut";
 	}
@@ -237,62 +207,39 @@ public class ShoppingCartController extends CommonController {
 	// submit checkout
 	@PostMapping(value = "/checkout")
 	@Transactional
-	public String checkedOut(Model model, Order order, HttpServletRequest request, Principal principal) {
-
+	public String checkedOut(Model model, @ModelAttribute("order") Order order, HttpServletRequest request, Principal principal) {
+		// Bước 1: Tạo đơn đặt hàng từ giỏ hàng
 		session = request.getSession();
-		Collection<CartItem> cartItems = shoppingCartService.getCartItems();
-		
+		Collection<CartProductViewDTO> cartProductViewDTO = cartProductViewRepository.getCartProductViewByCustomerId(CUSTOMER_ID);
 		Customer c = customersRepository.FindByEmail(principal.getName()).get();
+		//orderRepository.createOrderFromCart(c.getCustomerId(),order.getPhone());
 
-		double totalPrice = 0;
+		order.setTotalPrice(tongdonhang(cartProductViewDTO));
+		order.setOrderDate(null);
+		order.setCustomer(c);
+		orderRepository.save(order);
+		order.getOrderId();
 
-		for (CartItem cartItem : cartItems) {
-
+		// Bước 2: Thêm chi tiết đơn hàng từ giỏ hàng
+		for (CartProductViewDTO cartItem : cartProductViewDTO) {
 			OrderDetail orderDetail = new OrderDetail();
 			orderDetail.setQuantity(cartItem.getQuantity());
 			orderDetail.setOrder(order);
-			orderDetail.setProduct(cartItem.getProduct());
-
-			double price = cartItem.getQuantity() * cartItem.getProduct().getPrice();
-			totalPrice += price - (price * cartItem.getProduct().getDiscount() / 100);
-
-			double unitPrice = cartItem.getProduct().getPrice();
-
-			orderDetail.setTotalPrice(price - (price * cartItem.getProduct().getDiscount() / 100));
-			orderDetail.setPrice(unitPrice);
+			orderDetail.setProduct(productRepository.findByIdProduct(cartItem.getProductId()));
+			orderDetail.setTotalPrice(cartItem.getTotalPrice());
+			orderDetail.setPrice(cartItem.getPrice());
 			orderDetail.setStatus("Đang Chờ Xử Lý");
 			orderDetailRepository.save(orderDetail);
 
 		}
-
-		order.setTotalPrice(totalPrice);
-		Date date = new Date();
-		order.setOrderDate(date);
-		order.setAmount(shoppingCartService.getAmount());
-		order.setCustomer(c);
-
-		orderRepository.save(order);
-		order.getOrderId();
-
-		sendMailService.sendMail(c.getEmail(), "Vegana Store",
-				"<h3>Hi: " + order.getReceiver() + " !</h3> Bạn có một đơn đặt hàng từ Vegana Store!\r\n <br>"
-						+ "<br>"
-						+ "Ngày đặt hàng : " + "<h4 style=\"color: black;\">"+ order.getOrderDate() + "</h4>"
-						+ "<br>"
-						+ "Tổng số tiền là: "
-						+ "<h4 style=\"color: red;\">$" + order.getTotalPrice() + "</h4>"
-						+ "<br>"
-						+ "Cảm ơn bạn đã mua sắm trong cửa hàng của chúng tôi!\r\n ");
-
-		shoppingCartService.clear();
-		wishListService.clear();
+		// Bước 3: Xóa giỏ hàng sau khi hoàn tất đặt hàng
+		cartRepository.emptyCart(c.getCustomerId());
 		session.removeAttribute("cartItems");
 		model.addAttribute("orderId", order.getOrderId());
-		model.addAttribute("totalCartItemWishs", wishListService.getCount());
-		model.addAttribute("totalCartItems", shoppingCartService.getCount());
-
+		model.addAttribute("totalCartItems", cartProductViewDTO.size());
 		return "site/checkout_success";
 	}
+
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -302,3 +249,13 @@ public class ShoppingCartController extends CommonController {
 	}
 
 }
+
+/*		sendMailService.sendMail(c.getEmail(), "Vegana Store",
+				"<h3>Hi: " + order.getReceiver() + " !</h3> Bạn có một đơn đặt hàng từ Vegana Store!\r\n <br>"
+						+ "<br>"
+						+ "Ngày đặt hàng : " + "<h4 style=\"color: black;\">"+ order.getOrderDate() + "</h4>"
+						+ "<br>"
+						+ "Tổng số tiền là: "
+						+ "<h4 style=\"color: red;\">$" + order.getTotalPrice() + "</h4>"
+						+ "<br>"
+						+ "Cảm ơn bạn đã mua sắm trong cửa hàng của chúng tôi!\r\n ");*/

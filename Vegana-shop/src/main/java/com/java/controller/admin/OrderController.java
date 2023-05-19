@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.java.service.OrderDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +23,6 @@ import com.java.entity.OrderDetail;
 import com.java.entity.OrderExcelExporter;
 import com.java.repository.OrderDetailRepository;
 import com.java.repository.OrderRepository;
-import com.java.service.OrderDetailService;
 
 @Controller
 public class OrderController extends CommonController{

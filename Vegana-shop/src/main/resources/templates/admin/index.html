@@ -83,11 +83,11 @@
 										<div class="col-md-4 d-flex flex-column justify-content-around">
 											<div>
 												<h6 class="fw-bold text-uppercase text-success op-8">Total Income</h6>
-												<h3 class="fw-bold">$9.782</h3>
+												<h3 class="fw-bold" th:text="${revenue}"></h3>
 											</div>
 											<div>
 												<h6 class="fw-bold text-uppercase text-danger op-8">Total Spend</h6>
-												<h3 class="fw-bold">$1,248</h3>
+												<h3 class="fw-bold">$####</h3>
 											</div>
 										</div>
 										<div class="col-md-8">
@@ -138,7 +138,7 @@
 								</div>
 								<div class="card-body pb-0">
 									<div class="mb-4 mt-2">
-										<h1>$4,578.58</h1>
+										<h1>$####</h1>
 									</div>
 									<div class="pull-in">
 										<canvas id="dailySalesChart"></canvas>
@@ -148,7 +148,7 @@
 							<div class="card">
 								<div class="card-body pb-0">
 									<div class="h1 fw-bold float-right text-warning">+7%</div>
-									<h2 class="mb-2">213</h2>
+									<h2 class="mb-2">####</h2>
 									<p class="text-muted">Transactions</p>
 									<div class="pull-in sparkline-fix">
 										<div id="lineChart"></div>
@@ -181,7 +181,7 @@
 						</ul>
 					</nav>
 					<div class="copyright ml-auto">
-						2023, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Khai, Son, Bao, Anh</a>
+						2023, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Khai, Son, Bao, </a>
 					</div>				
 				</div>
 			</footer>
@@ -307,7 +307,7 @@
 			value:60,
 			maxValue:100,
 			width:7,
-			text: 5,
+			text: "#",
 			colors:['#f1f1f1', '#FF9E27'],
 			duration:400,
 			wrpClass:'circles-wrp',
@@ -322,7 +322,7 @@
 			value:70,
 			maxValue:100,
 			width:7,
-			text: 36,
+			text: "#",
 			colors:['#f1f1f1', '#2BB930'],
 			duration:400,
 			wrpClass:'circles-wrp',
@@ -337,7 +337,7 @@
 			value:40,
 			maxValue:100,
 			width:7,
-			text: 12,
+			text: "#",
 			colors:['#f1f1f1', '#F25961'],
 			duration:400,
 			wrpClass:'circles-wrp',

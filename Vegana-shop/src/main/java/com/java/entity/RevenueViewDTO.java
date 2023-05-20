@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RevenueViewDTO {
-    private double revenue;
+    private double total_revenue ;
     @Override
     public String toString() {
         return "Revenue{" +
-                "revenue=" + revenue +
+                "revenue=" + total_revenue +
                 '}';
     }
 

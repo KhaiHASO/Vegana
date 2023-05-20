@@ -13,6 +13,12 @@ public class RevenueViewRepository {
 
     public double getTotalRevenue() {
         String sql = "SELECT total_revenue FROM revenue_view LIMIT 1";
-        return jdbcTemplate.queryForObject(sql, Double.class);
+        try {
+            return jdbcTemplate.queryForObject(sql, Double.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return 0;
+        }
     }
+
 }

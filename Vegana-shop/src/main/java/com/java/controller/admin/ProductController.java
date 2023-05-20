@@ -10,6 +10,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.java.service.impl.ProductRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -47,6 +48,8 @@ public class ProductController extends CommonController{
 
 	@Autowired
 	SuppliersRepository suppliersRepository;
+	@Autowired
+	ProductRepositoryImpl productRepositoryImpl;
 
 	public ProductController(CategoryRepository categoryRepository, SuppliersRepository suppliersRepository,
 			ProductRepository productRepository) {
@@ -88,7 +91,9 @@ public class ProductController extends CommonController{
 		}
 
 		product.setImage(file.getOriginalFilename());
-		Product p = productRepository.save(product);
+		//Product p = productRepository.save(product);
+		Product p = productRepositoryImpl.addOrUpdateProduct(product);
+		System.out.println("Them addOrUpdateProduct");
 		if (null != p) {
 			model.addAttribute("message", "Update success");
 			model.addAttribute("product", product);

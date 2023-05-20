@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 20/05/2023 03:01:54
+ Date: 20/05/2023 20:31:23
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `carts`  (
 -- Records of carts
 -- ----------------------------
 BEGIN;
-INSERT INTO `carts` (`cartId`, `customerId`, `productId`, `quantity`, `price`) VALUES (122, 'khachhang00', NULL, NULL, NULL), (124, 'khai00', 3, 1, 45);
+INSERT INTO `carts` (`cartId`, `customerId`, `productId`, `quantity`, `price`) VALUES (122, 'khachhang00', NULL, NULL, NULL);
 COMMIT;
 
 -- ----------------------------
@@ -120,7 +120,7 @@ CREATE TABLE `orderdetails`  (
 -- Records of orderdetails
 -- ----------------------------
 BEGIN;
-INSERT INTO `orderdetails` (`orderDetailId`, `price`, `quantity`, `status`, `total_price`, `orderId`, `productId`) VALUES (56, 120, 1, 'Đang Chờ Xử Lý', 114, 42, 37), (57, 65, 1, 'Đang Chờ Xử Lý', 65, 43, 32), (58, 40, 1, 'Đang Chờ Xử Lý', 38, 43, 4), (59, 50, 1, 'Đang Chờ Xử Lý', 50, 43, 8), (60, 80, 1, 'Đang Chờ Xử Lý', 72, 43, 10), (61, 100, 1, 'Đang Chờ Xử Lý', 100, 43, 12), (62, 120, 1, 'Đang Chờ Xử Lý', 108, 43, 14), (71, 270, 1, 'Đang Chờ Xử Lý', 270, 46, 25), (72, 50, 2, 'Đang Chờ Xử Lý', 100, 46, 8), (73, 100, 1, 'Đang Chờ Xử Lý', 100, 46, 12), (74, 118.75, 4, 'Đang Chờ Xử Lý', 475, 46, 38), (75, 45, 29, 'Đã Thanh Toán', 1305, 47, 3);
+INSERT INTO `orderdetails` (`orderDetailId`, `price`, `quantity`, `status`, `total_price`, `orderId`, `productId`) VALUES (82, 54, 7, 'Đã Thanh Toán', 378, 49, 5), (83, 38, 7, 'Đã Thanh Toán', 266, 49, 6), (84, 72, 7, 'Đã Thanh Toán', 504, 49, 7), (85, 50, 7, 'Đã Thanh Toán', 350, 49, 8), (86, 54, 7, 'Đã Thanh Toán', 378, 49, 9), (87, 72, 7, 'Đã Thanh Toán', 504, 49, 10), (88, 57, 7, 'Đã Thanh Toán', 399, 49, 11), (89, 108, 7, 'Đã Thanh Toán', 756, 49, 18), (90, 225, 7, 'Đã Thanh Toán', 1575, 49, 48), (91, 100, 7, 'Đã Thanh Toán', 700, 49, 12), (92, 104.5, 7, 'Đã Thanh Toán', 731.5, 49, 13), (93, 108, 7, 'Đã Thanh Toán', 756, 49, 14), (94, 90, 7, 'Đã Thanh Toán', 630, 49, 15), (95, 142.5, 7, 'Đã Thanh Toán', 997.5, 49, 16), (96, 20, 4, 'Đã Thanh Toán', 80, 49, 17), (97, 190, 4, 'Đã Thanh Toán', 760, 49, 19), (98, 285, 4, 'Đã Thanh Toán', 1140, 49, 20);
 COMMIT;
 
 -- ----------------------------
@@ -145,7 +145,7 @@ CREATE TABLE `orders`  (
 -- Records of orders
 -- ----------------------------
 BEGIN;
-INSERT INTO `orders` (`orderId`, `address`, `description`, `orderDate`, `phone`, `receiver`, `total_price`, `customerId`) VALUES (42, '01 Vo Van Ngan Street', 'Giao lẹ dùm', '2023-05-11', '0367151727', 'Khai Phan', 114, 'khai00'), (43, '01 Vo Van Ngan Street', 'Giao lẹ dùm', '2023-05-11', '0367151727', 'Khai Phan', 433, 'khai00'), (46, '01 Vo Van Ngan Street', 'giao muộn là xuống địa ngục', '2023-05-20', '0367151727', 'Khai Phan', 945, 'khai00'), (47, '01 Vo Van Ngan Street', 'giao muộn là xuống địa ngục', '2023-05-20', '0367151727', 'Khai Phan', 1305, 'khai00');
+INSERT INTO `orders` (`orderId`, `address`, `description`, `orderDate`, `phone`, `receiver`, `total_price`, `customerId`) VALUES (49, '01 Vo Van Ngan Street', 'giao muộn là xuống địa ngục', '2023-05-20', '0367151727', 'Khai Phan', 11486, 'khai00');
 COMMIT;
 
 -- ----------------------------
@@ -174,7 +174,7 @@ CREATE TABLE `products`  (
 -- Records of products
 -- ----------------------------
 BEGIN;
-INSERT INTO `products` (`productId`, `description`, `discount`, `enteredDate`, `image`, `name`, `price`, `quantity`, `categoryId`, `supplierId`) VALUES (3, 'Snack bắp vị phô mai Oishi Tom Toms (45g/gói)', 10, '2021-09-02', 'snack-oishi-toms.jpg', 'Snack Oishi Tom Toms', 50, 100, 1, 3), (4, 'Snack bắp ngọt Oishi (45g/gói)', 5, '2021-09-02', 'snack-bap-ngot.jpg', 'Snack bắp ngọt Oishi', 40, 300, 1, 3), (5, 'Snack nhân sô cô la Oishi Pillows (100g) ', 10, '2021-09-01', 'snack-pillows.jpg', 'Snack Oishi Pillows', 60, 60, 1, 3), (6, 'Snack khoai tây vị muối Oishi Flutes (40g)', 5, '2021-09-02', 'snack-flutes.jpg', 'Snack Oishi Flutes', 40, 60, 1, 3), (7, 'Snack nhân sữa dừa Oishi Pillows (100g)', 10, '2021-09-01', 'snack-nhan-pillows.jpg', 'Snack sữa dừa Oishi Pillows', 80, 80, 1, 3), (8, 'Snack khoai tây poca (30) gr', 0, '2021-09-02', 'snack-poca.jpg', 'Snack khoai tây Poca', 50, 298, 1, 3), (9, 'Snack cua vị sốt chua ngọt Oishi Crab Me! (45g/gói)', 10, '2021-09-02', 'snack-crabme.jpg', 'Snack Oishi Crab Me', 60, 40, 1, 3), (10, 'Snack vị bò bít tết poca steack (40g)', 10, '2021-09-02', 'snack-poca-cay.jpg', 'Snack Poca Steack', 80, 60, 1, 3), (11, 'Snack bim bim thái (40g)', 5, '2021-09-02', 'snack-martys.jpg', 'Snack Thái Martys', 60, 40, 1, 3), (12, 'Yến mạch hạnh nhân Dan-D Pak (350g) ', 0, '2021-09-02', 'Yến-mạch-hạnh-nhân-Dan-D-Pak-350g.jpg', 'Dan-D Pak', 100, 49, 2, 4), (13, 'Bánh Quy Viên Sô Cô La Misura 290g', 5, '2021-09-03', 'banh-mizura.jpg', 'Sô Cô La Misura', 110, 30, 2, 4), (14, 'Bánh quy Cosy nhân mứt vị táo hộp 240g', 10, '2021-09-02', 'banh-tik.jpg', 'Cookies Tik ', 120, 10, 2, 4), (15, 'Bánh gạo nướng An vị cá Nhật thượng hạng Orion gói 117.6g', 0, '2021-09-02', 'banh-orion.jpg', 'Bánh Orion', 90, 60, 2, 4), (16, 'Bánh ăn sáng C’est Bon sợi thịt gà là lựa chọn hoàn hảo cho bữa ăn sáng hàng ngày của cả nhà', 5, '2021-09-02', 'banh-orion-bon.jpg', 'Bánh C’est Bon', 150, 50, 2, 4), (17, 'Bánh quy mini kem socola Oreo (23g)', 0, '2021-09-03', 'banh-mini-oreo.jpg', 'Bánh quy socola Oreo', 20, 10, 2, 4), (18, 'Bánh quy cacao nhân kem hạnh nhân YBC 18 cái (115.2g)', 10, '2021-09-07', 'banh-noir.jpg', 'Bánh quy cacao', 120, 30, 2, 3), (19, 'Bánh quy dinh dưỡng hạt Mắc ca kết hợp Nghệ - Hộp 12 bánh 45g', 5, '2021-09-04', 'banh-mac-ca.jpg', 'Bánh quy hạt Mắc ca', 200, 10, 2, 4), (20, 'Bánh quy Danisa được sản xuất từ công thức chính gốc của Đan Mạch, với nguyên liệu được lựa chọn kỹ càng, tinh túy nhất, sử dụng loại bơ thượng hạng giàu hương vị góp phần tạo nên sự khác biệt độc đáo so với các dòng bánh quy bơ khác.', 5, '2021-09-05', 'banh-danisa.jpg', 'Bánh Danisa', 300, 50, 2, 4), (21, 'Kẹo dẻo Jellyc Hải Hà kotobuki 100g', 0, '2021-09-03', 'chip-chip-panda.jpg', 'Chip Chip HAIHA', 40, 100, 5, 6), (22, 'Kẹo AnyTime Hàn Quốc 60 gram ( vị sữa và bạc hà) thanh mát.', 0, '2021-09-14', 'keo-anytime.jpg', 'Kẹo AnyTime', 50, 200, 5, 6), (23, 'Kẹo Cao Su Doublemint Vị Bạc Hà', 10, '2021-09-01', 'keo-doublemint.jpg', 'Kẹo Doublemint', 60, 100, 5, 6), (24, 'Hộp Hạt Hạnh Nhân Dinh Dưỡng Cho Mẹ REAL FOOD STORE (250g) ', 10, '2021-09-15', 'hat-hanh-nhan.jpg', 'Hạt Hạnh Nhân', 200, 200, 5, 6), (25, 'Hạt hạnh nhân nguyên chất Kirkland Almonds Mỹ 1.36kg', 10, '2021-09-10', 'hat-almonds.jpg', 'Hạt hạnh nhân Kirkland', 300, 99, 5, 6), (26, 'Túi Hạt Macca Dinh Dưỡng Cho Mẹ Real Food Store (500g)', 0, '2021-09-08', 'hat-nuts.jpg', 'Hạt Macca Dinh Dưỡng', 200, 100, 5, 6), (27, 'Nhân Hạt Óc Chó Sunrise (120gr) Hạt Dinh Dưỡng Đã Tách Vỏ Quả Óc Chó.Nhập Khẩu Mỹ', 10, '2021-09-10', 'hat-oc-cho.jpg', 'Nhân Hạt Óc Chó Sunrise', 400, 300, 5, 6), (28, 'Lốc 3 Hộp Sữa Hạt Hạnh Nhân Nguyên Chất 137 180ml', 0, '2021-09-03', 'sua-hanh-nhan.jpg', 'Sữa Hạt Hạnh Nhân ', 60, 100, 3, 2), (29, 'Nước ngọt Mirinda hương cam chai 1.5 lít', 10, '2021-09-10', 'nuoc-mirinda-cam.jpg', 'Mirinda vị cam', 100, 60, 4, 5), (30, 'Nước ngọt Mountain Dew 390 ml', 0, '2021-09-16', 'nuoc-mountain.jpg', 'Mountain Dew', 80, 300, 4, 5), (31, 'Trà ô long TEA 350ml', 5, '2021-09-11', 'tra-o-long.jpg', 'Trà TEA+', 45, 50, 4, 5), (32, 'Nước uống Isotonic vị chanh muối', 0, '2021-09-17', 'nuoc-revive.jpg', 'Nước Revive', 65, 200, 4, 5), (33, 'Nước uống đóng chai Aquafina (500ml)', 0, '2021-09-09', 'nuoc-aquafina.jpg', 'Aquafina', 20, 300, 4, 5), (34, 'Nước ngọt 7Up', 0, '2021-09-08', 'nuoc-7-up.jpg', '7Up', 35, 200, 4, 5), (35, 'Trà Lipton ICE Tea', 20, '2021-09-06', 'lipton-tea.jpg', 'Lipton Tea', 85, 300, 4, 5), (36, 'Nước giải khát Coca-Cola Plus (330ml)', 0, '2021-09-11', 'coca-cola-plus.jpg', 'Coca-Cola Plus', 100, 100, 4, 5), (37, 'Nước Giải Khát Coca-Cola vị Nguyên Bản Original 320mlx6 | Nước có gas', 5, '2021-09-19', 'coca-cola-original.jpg', ' Coca-Cola vị  Original', 120, 200, 4, 5), (38, 'Nước Giải Khát Coca-Cola | Nước có gas', 5, '2021-09-17', 'coca-cola.jpg', 'Coca-Cola', 125, 296, 4, 5), (39, 'Sữa Dielac Grow Plus 1+ Màu Xanh Tăng Cân, 1-2 tuổi, Vinamilk', 10, '2021-09-11', 'sua-dielac-grow-plus.jpg', 'Sữa Dielac Grow Plus', 500, 300, 3, 1), (40, 'SỮA BỘT GOLD YOKO 1 VINAMILK 850G DÀNH CHO BÉ TỪ 0 - 1 Tuổi | Sữa cho bé dưới 24 tháng', 10, '2021-09-09', 'sua-bot-yoko.jpg', 'SỮA BỘT GOLD YOKO', 700, 100, 3, 1), (41, 'HỘP SỮA BỘT VINAMILK DIELAC ALPHA GOLD IQ 1 (400G) (CHO TRẺ TỪ 0 - 6 THÁNG TUỔI) ', 5, '2021-09-12', 'sua-alpha.jpg', 'DIELAC ALPHA GOLD', 600, 300, 3, 1), (42, 'Sữa bột Vinamilk Dielac Optimum số 2 - hộp thiếc 900g (dành cho trẻ từ 6-12 tháng tuổi)', 15, '2021-09-11', 'sua-optimum.jpg', 'Dielac Optimum', 500, 100, 3, 1), (43, 'Sữa dielac grow plus 1+ 900g dành cho trẻ từ 1-2 tuổi', 10, '2021-09-08', 'sua-grow-plus.jpg', 'Sữa Dielac Grow Plus-Red', 650, 300, 3, 1), (44, 'Sữa tươi tiệt trùng Vinamilk 100% có đường 180ml (1 hộp)', 5, '2021-09-11', 'sua-tuoi-vinamilk.jpg', 'Sữa Tươi Vinamilk', 35, 200, 3, 1), (45, 'Sữa Nestle Milo nước (Lon 240ml)', 0, '2021-09-09', 'nestle-milo.jpg', ' Sữa Nestle Milo', 25, 200, 3, 2), (46, 'Sữa Lúa Mạch Nestlé MILO Lon Thùng 24 Lon x 240 ml (4x6x240ml) | Sữa Tươi', 0, '2021-09-11', 'milo-thung.jpg', 'Sữa Lúa Mạch Nestlé MILO', 300, 200, 3, 2), (47, 'THÙNG SỮA ĐẬU NÀNH VINAMILK HẠT ÓC CHÓ -48 HỘP 180ML | Sữa Tươi', 0, '2021-09-11', 'sua-oc-cho.jpg', 'Sữa Hạt Óc Chó', 45, 200, 3, 1), (48, 'Túi Nhân Hạt Óc Chó Dinh Dưỡng Cho Mẹ Real Food (200g) | Dinh dưỡng cho mẹ', 10, '2021-09-12', 'hat-occho.jpg', 'Túi Nhân Hạt Óc Chó', 250, 300, 1, 3), (49, 'Combo 3 hộp sữa hạt dẻ 1L 137 Degrees Thái Lan', 5, '2021-09-05', 'sua-pistachio.jpg', 'Sữa Hạt Dẻ', 45, 100, 3, 2), (54, 'mô tả', 5, '2021-09-09', 'den_mk052_1_0ddcbcb5ca3d4d3e8bb6ac99fcb7c23f_grande.jpg', 'test', 1000000, 20, 1, 1);
+INSERT INTO `products` (`productId`, `description`, `discount`, `enteredDate`, `image`, `name`, `price`, `quantity`, `categoryId`, `supplierId`) VALUES (3, 'Snack bắp vị phô mai Oishi Tom Toms (45g/gói)', 10, '2021-09-02', 'snack-oishi-toms.jpg', 'Snack Oishi Tom Toms', 50, 101, 1, 3), (4, 'Snack bắp ngọt Oishi (45g/gói)', 5, '2021-09-02', 'snack-bap-ngot.jpg', 'Snack bắp ngọt Oishi', 40, 308, 1, 3), (5, 'Snack nhân sô cô la Oishi Pillows (100g) ', 10, '2021-09-01', 'snack-pillows.jpg', 'Snack Oishi Pillows', 60, 60, 1, 3), (6, 'Snack khoai tây vị muối Oishi Flutes (40g)', 5, '2021-09-02', 'snack-flutes.jpg', 'Snack Oishi Flutes', 40, 60, 1, 3), (7, 'Snack nhân sữa dừa Oishi Pillows (100g)', 10, '2021-09-01', 'snack-nhan-pillows.jpg', 'Snack sữa dừa Oishi Pillows', 80, 80, 1, 3), (8, 'Snack khoai tây poca (30) gr', 0, '2021-09-02', 'snack-poca.jpg', 'Snack khoai tây Poca', 50, 298, 1, 3), (9, 'Snack cua vị sốt chua ngọt Oishi Crab Me! (45g/gói)', 10, '2021-09-02', 'snack-crabme.jpg', 'Snack Oishi Crab Me', 60, 40, 1, 3), (10, 'Snack vị bò bít tết poca steack (40g)', 10, '2021-09-02', 'snack-poca-cay.jpg', 'Snack Poca Steack', 80, 61, 1, 3), (11, 'Snack bim bim thái (40g)', 5, '2021-09-02', 'snack-martys.jpg', 'Snack Thái Martys', 60, 40, 1, 3), (12, 'Yến mạch hạnh nhân Dan-D Pak (350g) ', 0, '2021-09-02', 'Yến-mạch-hạnh-nhân-Dan-D-Pak-350g.jpg', 'Dan-D Pak', 100, 49, 2, 4), (13, 'Bánh Quy Viên Sô Cô La Misura 290g', 5, '2021-09-03', 'banh-mizura.jpg', 'Sô Cô La Misura', 110, 30, 2, 4), (14, 'Bánh quy Cosy nhân mứt vị táo hộp 240g', 10, '2021-09-02', 'banh-tik.jpg', 'Cookies Tik ', 120, 10, 2, 4), (15, 'Bánh gạo nướng An vị cá Nhật thượng hạng Orion gói 117.6g', 0, '2021-09-02', 'banh-orion.jpg', 'Bánh Orion', 90, 60, 2, 4), (16, 'Bánh ăn sáng C’est Bon sợi thịt gà là lựa chọn hoàn hảo cho bữa ăn sáng hàng ngày của cả nhà', 5, '2021-09-02', 'banh-orion-bon.jpg', 'Bánh C’est Bon', 150, 50, 2, 4), (17, 'Bánh quy mini kem socola Oreo (23g)', 0, '2021-09-03', 'banh-mini-oreo.jpg', 'Bánh quy socola Oreo', 20, 10, 2, 4), (18, 'Bánh quy cacao nhân kem hạnh nhân YBC 18 cái (115.2g)', 10, '2021-09-07', 'banh-noir.jpg', 'Bánh quy cacao', 120, 30, 2, 3), (19, 'Bánh quy dinh dưỡng hạt Mắc ca kết hợp Nghệ - Hộp 12 bánh 45g', 5, '2021-09-04', 'banh-mac-ca.jpg', 'Bánh quy hạt Mắc ca', 200, 10, 2, 4), (20, 'Bánh quy Danisa được sản xuất từ công thức chính gốc của Đan Mạch, với nguyên liệu được lựa chọn kỹ càng, tinh túy nhất, sử dụng loại bơ thượng hạng giàu hương vị góp phần tạo nên sự khác biệt độc đáo so với các dòng bánh quy bơ khác.', 5, '2021-09-05', 'banh-danisa.jpg', 'Bánh Danisa', 300, 50, 2, 4), (21, 'Kẹo dẻo Jellyc Hải Hà kotobuki 100g', 0, '2021-09-03', 'chip-chip-panda.jpg', 'Chip Chip HAIHA', 40, 100, 5, 6), (22, 'Kẹo AnyTime Hàn Quốc 60 gram ( vị sữa và bạc hà) thanh mát.', 0, '2021-09-14', 'keo-anytime.jpg', 'Kẹo AnyTime', 50, 200, 5, 6), (23, 'Kẹo Cao Su Doublemint Vị Bạc Hà', 10, '2021-09-01', 'keo-doublemint.jpg', 'Kẹo Doublemint', 60, 100, 5, 6), (24, 'Hộp Hạt Hạnh Nhân Dinh Dưỡng Cho Mẹ REAL FOOD STORE (250g) ', 10, '2021-09-15', 'hat-hanh-nhan.jpg', 'Hạt Hạnh Nhân', 200, 200, 5, 6), (25, 'Hạt hạnh nhân nguyên chất Kirkland Almonds Mỹ 1.36kg', 10, '2021-09-10', 'hat-almonds.jpg', 'Hạt hạnh nhân Kirkland', 300, 99, 5, 6), (26, 'Túi Hạt Macca Dinh Dưỡng Cho Mẹ Real Food Store (500g)', 0, '2021-09-08', 'hat-nuts.jpg', 'Hạt Macca Dinh Dưỡng', 200, 100, 5, 6), (27, 'Nhân Hạt Óc Chó Sunrise (120gr) Hạt Dinh Dưỡng Đã Tách Vỏ Quả Óc Chó.Nhập Khẩu Mỹ', 10, '2021-09-10', 'hat-oc-cho.jpg', 'Nhân Hạt Óc Chó Sunrise', 400, 300, 5, 6), (28, 'Lốc 3 Hộp Sữa Hạt Hạnh Nhân Nguyên Chất 137 180ml', 0, '2021-09-03', 'sua-hanh-nhan.jpg', 'Sữa Hạt Hạnh Nhân ', 60, 100, 3, 2), (29, 'Nước ngọt Mirinda hương cam chai 1.5 lít', 10, '2021-09-10', 'nuoc-mirinda-cam.jpg', 'Mirinda vị cam', 100, 60, 4, 5), (30, 'Nước ngọt Mountain Dew 390 ml', 0, '2021-09-16', 'nuoc-mountain.jpg', 'Mountain Dew', 80, 300, 4, 5), (31, 'Trà ô long TEA 350ml', 5, '2021-09-11', 'tra-o-long.jpg', 'Trà TEA+', 45, 50, 4, 5), (32, 'Nước uống Isotonic vị chanh muối', 0, '2021-09-17', 'nuoc-revive.jpg', 'Nước Revive', 65, 201, 4, 5), (33, 'Nước uống đóng chai Aquafina (500ml)', 0, '2021-09-09', 'nuoc-aquafina.jpg', 'Aquafina', 20, 299, 4, 5), (34, 'Nước ngọt 7Up', 0, '2021-09-08', 'nuoc-7-up.jpg', '7Up', 35, 200, 4, 5), (35, 'Trà Lipton ICE Tea', 20, '2021-09-06', 'lipton-tea.jpg', 'Lipton Tea', 85, 300, 4, 5), (36, 'Nước giải khát Coca-Cola Plus (330ml)', 0, '2021-09-11', 'coca-cola-plus.jpg', 'Coca-Cola Plus', 100, 100, 4, 5), (37, 'Nước Giải Khát Coca-Cola vị Nguyên Bản Original 320mlx6 | Nước có gas', 5, '2021-09-19', 'coca-cola-original.jpg', ' Coca-Cola vị  Original', 120, 200, 4, 5), (38, 'Nước Giải Khát Coca-Cola | Nước có gas', 5, '2021-09-17', 'coca-cola.jpg', 'Coca-Cola', 125, 295, 4, 5), (39, 'Sữa Dielac Grow Plus 1+ Màu Xanh Tăng Cân, 1-2 tuổi, Vinamilk', 10, '2021-09-11', 'sua-dielac-grow-plus.jpg', 'Sữa Dielac Grow Plus', 500, 300, 3, 1), (40, 'SỮA BỘT GOLD YOKO 1 VINAMILK 850G DÀNH CHO BÉ TỪ 0 - 1 Tuổi | Sữa cho bé dưới 24 tháng', 10, '2021-09-09', 'sua-bot-yoko.jpg', 'SỮA BỘT GOLD YOKO', 700, 100, 3, 1), (41, 'HỘP SỮA BỘT VINAMILK DIELAC ALPHA GOLD IQ 1 (400G) (CHO TRẺ TỪ 0 - 6 THÁNG TUỔI) ', 5, '2021-09-12', 'sua-alpha.jpg', 'DIELAC ALPHA GOLD', 600, 300, 3, 1), (42, 'Sữa bột Vinamilk Dielac Optimum số 2 - hộp thiếc 900g (dành cho trẻ từ 6-12 tháng tuổi)', 15, '2021-09-11', 'sua-optimum.jpg', 'Dielac Optimum', 500, 100, 3, 1), (43, 'Sữa dielac grow plus 1+ 900g dành cho trẻ từ 1-2 tuổi', 10, '2021-09-08', 'sua-grow-plus.jpg', 'Sữa Dielac Grow Plus-Red', 650, 300, 3, 1), (44, 'Sữa tươi tiệt trùng Vinamilk 100% có đường 180ml (1 hộp)', 5, '2021-09-11', 'sua-tuoi-vinamilk.jpg', 'Sữa Tươi Vinamilk', 35, 200, 3, 1), (45, 'Sữa Nestle Milo nước (Lon 240ml)', 0, '2021-09-09', 'nestle-milo.jpg', ' Sữa Nestle Milo', 25, 200, 3, 2), (46, 'Sữa Lúa Mạch Nestlé MILO Lon Thùng 24 Lon x 240 ml (4x6x240ml) | Sữa Tươi', 0, '2021-09-11', 'milo-thung.jpg', 'Sữa Lúa Mạch Nestlé MILO', 300, 200, 3, 2), (47, 'THÙNG SỮA ĐẬU NÀNH VINAMILK HẠT ÓC CHÓ -48 HỘP 180ML | Sữa Tươi', 0, '2021-09-11', 'sua-oc-cho.jpg', 'Sữa Hạt Óc Chó', 45, 199, 3, 1), (48, 'Túi Nhân Hạt Óc Chó Dinh Dưỡng Cho Mẹ Real Food (200g) | Dinh dưỡng cho mẹ', 10, '2021-09-12', 'hat-occho.jpg', 'Túi Nhân Hạt Óc Chó', 250, 300, 1, 3), (49, 'Combo 3 hộp sữa hạt dẻ 1L 137 Degrees Thái Lan', 5, '2021-09-05', 'sua-pistachio.jpg', 'Sữa Hạt Dẻ', 45, 100, 3, 2), (54, 'mô tả', 5, '2021-09-09', 'den_mk052_1_0ddcbcb5ca3d4d3e8bb6ac99fcb7c23f_grande.jpg', 'test', 1000000, 20, 1, 1);
 COMMIT;
 
 -- ----------------------------
@@ -230,6 +230,46 @@ CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `cart_product_view` AS se
 -- ----------------------------
 DROP VIEW IF EXISTS `revenue_view`;
 CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `revenue_view` AS select sum(`od`.`total_price`) AS `total_revenue` from (`orderdetails` `od` join `orders` `o` on((`od`.`orderId` = `o`.`orderId`))) where (`od`.`status` = 'Đã Thanh Toán');
+
+-- ----------------------------
+-- Procedure structure for AddOrUpdateProduct
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `AddOrUpdateProduct`;
+delimiter ;;
+CREATE PROCEDURE `AddOrUpdateProduct`(IN p_description VARCHAR(255),
+  IN p_discount DOUBLE,
+  IN p_enteredDate DATE,
+  IN p_image VARCHAR(255),
+  IN p_name VARCHAR(255),
+  IN p_price DOUBLE,
+  IN p_quantity INT,
+  IN p_categoryId INT,
+  IN p_supplierId INT)
+BEGIN
+  DECLARE productCount INT;
+
+  -- Loại bỏ khoảng trắng và chuyển đổi tên sản phẩm thành chữ thường
+  SET p_name = LOWER(TRIM(p_name));
+
+  -- Kiểm tra xem số lượng đầu vào là NULL hay không
+  IF p_quantity IS NULL THEN
+    SET p_quantity = 0;
+  END IF;
+
+  -- Kiểm tra xem sản phẩm đã tồn tại dựa trên tên (không phân biệt chữ hoa chữ thường)
+  SELECT COUNT(*) INTO productCount FROM products WHERE LOWER(TRIM(name)) = p_name;
+
+  IF productCount > 0 THEN
+    -- Sản phẩm đã tồn tại, cộng dồn số lượng mới vào số lượng hiện có
+    UPDATE products SET quantity = quantity + p_quantity WHERE LOWER(TRIM(name)) = p_name;
+  ELSE
+    -- Sản phẩm chưa tồn tại, thêm một bản ghi mới
+    INSERT INTO products (description, discount, enteredDate, image, name, price, quantity, categoryId, supplierId)
+    VALUES (p_description, p_discount, p_enteredDate, p_image, p_name, p_price, p_quantity, p_categoryId, p_supplierId);
+  END IF;
+END
+;;
+delimiter ;
 
 -- ----------------------------
 -- Procedure structure for UpdateOrInsertIntoCart
@@ -314,13 +354,33 @@ delimiter ;
 -- ----------------------------
 -- Triggers structure for table orderdetails
 -- ----------------------------
-DROP TRIGGER IF EXISTS `decrease_quantity`;
+DROP TRIGGER IF EXISTS `restoreProductQuantityAfterUpdate`;
 delimiter ;;
-CREATE TRIGGER `decrease_quantity` AFTER INSERT ON `orderdetails` FOR EACH ROW BEGIN
-    -- Giảm số lượng sản phẩm khi có đơn hàng được tạo
-    UPDATE products
-    SET quantity = quantity - NEW.quantity
-    WHERE productId = NEW.productId;
+CREATE TRIGGER `restoreProductQuantityAfterUpdate` AFTER UPDATE ON `orderdetails` FOR EACH ROW BEGIN
+    IF OLD.status = 'Đã Thanh Toán' AND NEW.status <> 'Đang Giao Dịch' THEN
+        UPDATE products
+        SET quantity = quantity + OLD.quantity
+        WHERE productId = OLD.productId;
+    END IF;
+    
+    IF OLD.status <> 'Đang Chờ Xử Lý' AND NEW.status = 'Đã Thanh Toán' THEN
+        UPDATE products
+        SET quantity = quantity - OLD.quantity
+        WHERE productId = OLD.productId;
+    END IF;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Triggers structure for table orderdetails
+-- ----------------------------
+DROP TRIGGER IF EXISTS `restoreProductQuantityAfterDelete`;
+delimiter ;;
+CREATE TRIGGER `restoreProductQuantityAfterDelete` AFTER DELETE ON `orderdetails` FOR EACH ROW BEGIN
+        UPDATE products
+        SET quantity = quantity + OLD.quantity
+        WHERE productId = OLD.productId;
 END
 ;;
 delimiter ;

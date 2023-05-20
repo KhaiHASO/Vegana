@@ -37,4 +37,17 @@ public class OrderDetail implements Serializable {
 	@JoinColumn(name = "productId")
 	private Product product;
 
+	@Override
+	public String toString() {
+		return "OrderDetail{" +
+				"orderDetailId=" + orderDetailId +
+				", price=" + price +
+				", quantity=" + quantity +
+				", status='" + status + '\'' +
+				", totalPrice=" + totalPrice +
+				", orderId=" + order.getOrderId() +
+				", productId=" + product.getProductId() +
+				'}';
+	}
+
 }

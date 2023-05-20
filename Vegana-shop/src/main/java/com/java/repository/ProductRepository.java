@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.java.entity.Product;
@@ -54,5 +55,9 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 			+ "*FROM products AS p\r\n"
 			+ "WHERE p.categoryId = ?;" , nativeQuery = true)
 	List<Product> productsByCategory(Integer categoryId);
+
+	// Phương thức để thêm hoặc cập nhật sản phẩm bằng cách gọi stored procedure
+	 Void addOrUpdateProduct(Product product);
+
 
 }

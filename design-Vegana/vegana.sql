@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 20/05/2023 20:31:23
+ Date: 20/05/2023 21:09:27
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `carts`  (
   INDEX `productId_idx`(`productId` ASC) USING BTREE,
   CONSTRAINT `customerId_fk` FOREIGN KEY (`customerId`) REFERENCES `customers` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `productId_fk` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 122 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 150 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of carts
@@ -114,7 +114,7 @@ CREATE TABLE `orderdetails`  (
   INDEX `FK5pie1uapfd704usnm2loi3tex`(`productId` ASC) USING BTREE,
   CONSTRAINT `FK5pie1uapfd704usnm2loi3tex` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `orderDetailId` FOREIGN KEY (`orderId`) REFERENCES `orders` (`orderId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 99 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of orderdetails
@@ -139,7 +139,7 @@ CREATE TABLE `orders`  (
   PRIMARY KEY (`orderId`) USING BTREE,
   INDEX `FK1bpj2iini89gbon333nm7tvht`(`customerId` ASC) USING BTREE,
   CONSTRAINT `customerID` FOREIGN KEY (`customerId`) REFERENCES `customers` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 50 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of orders
@@ -168,7 +168,7 @@ CREATE TABLE `products`  (
   INDEX `FKs2xbxi7wmu948op6qiho9yr8d`(`supplierId` ASC) USING BTREE,
   CONSTRAINT `FKej2ob3ifydf846t2a2tntna4e` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`categoryId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FKs2xbxi7wmu948op6qiho9yr8d` FOREIGN KEY (`supplierId`) REFERENCES `suppliers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 59 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of products
@@ -354,20 +354,12 @@ delimiter ;
 -- ----------------------------
 -- Triggers structure for table orderdetails
 -- ----------------------------
-DROP TRIGGER IF EXISTS `restoreProductQuantityAfterUpdate`;
+DROP TRIGGER IF EXISTS `restoreProductQuantityAfterDelete`;
 delimiter ;;
-CREATE TRIGGER `restoreProductQuantityAfterUpdate` AFTER UPDATE ON `orderdetails` FOR EACH ROW BEGIN
-    IF OLD.status = 'Đã Thanh Toán' AND NEW.status <> 'Đang Giao Dịch' THEN
+CREATE TRIGGER `restoreProductQuantityAfterDelete` AFTER DELETE ON `orderdetails` FOR EACH ROW BEGIN
         UPDATE products
         SET quantity = quantity + OLD.quantity
         WHERE productId = OLD.productId;
-    END IF;
-    
-    IF OLD.status <> 'Đang Chờ Xử Lý' AND NEW.status = 'Đã Thanh Toán' THEN
-        UPDATE products
-        SET quantity = quantity - OLD.quantity
-        WHERE productId = OLD.productId;
-    END IF;
 END
 ;;
 delimiter ;
@@ -375,12 +367,24 @@ delimiter ;
 -- ----------------------------
 -- Triggers structure for table orderdetails
 -- ----------------------------
-DROP TRIGGER IF EXISTS `restoreProductQuantityAfterDelete`;
+DROP TRIGGER IF EXISTS `restoreProductQuantityAfterUpdate`;
 delimiter ;;
-CREATE TRIGGER `restoreProductQuantityAfterDelete` AFTER DELETE ON `orderdetails` FOR EACH ROW BEGIN
+CREATE TRIGGER `restoreProductQuantityAfterUpdate` AFTER UPDATE ON `orderdetails` FOR EACH ROW BEGIN
+    IF OLD.status <> 'Đang Chờ Xử Lý' AND NEW.status = 'Đã Thanh Toán' THEN
+        UPDATE products
+        SET quantity = quantity - OLD.quantity
+        WHERE productId = OLD.productId;
+    END IF;
+    IF OLD.status = 'Đã Thanh Toán' AND NEW.status <> 'Đang Giao Dịch' THEN
         UPDATE products
         SET quantity = quantity + OLD.quantity
         WHERE productId = OLD.productId;
+    END IF;
+		 IF OLD.status = 'Đang Giao Dịch' AND NEW.status <> 'Đã Thanh Toán' THEN
+        UPDATE products
+        SET quantity = quantity - OLD.quantity
+        WHERE productId = OLD.productId;
+    END IF;
 END
 ;;
 delimiter ;

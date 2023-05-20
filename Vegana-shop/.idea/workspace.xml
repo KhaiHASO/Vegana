@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="xong 1 nua cai gio hang, kho vai ca lon">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/repository/RevenueViewRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,19 +59,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="VeganaShopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="vegana-shop" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.java.VeganaShopApplication" />
@@ -104,7 +90,9 @@
       <workItem from="1684382032485" duration="18859000" />
       <workItem from="1684491814994" duration="1192000" />
       <workItem from="1684502314132" duration="20589000" />
-      <workItem from="1684552237800" duration="1548000" />
+      <workItem from="1684552237800" duration="2084000" />
+      <workItem from="1684554438543" duration="884000" />
+      <workItem from="1684576588790" duration="2889000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>

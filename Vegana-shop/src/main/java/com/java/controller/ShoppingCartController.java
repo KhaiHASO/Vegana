@@ -190,8 +190,13 @@ public class ShoppingCartController extends CommonController {
 
 		Order order = new Order();
 		model.addAttribute("order", order);
+		model.addAttribute("message","");
 		// Tải giỏ hàng từ cơ sở dữ liệu
 		Collection<CartProductViewDTO> cartProductViewDTO = cartProductViewRepository.getCartProductViewByCustomerId(CUSTOMER_ID);
+		if (cartProductViewDTO == null || cartProductViewDTO.isEmpty()) {
+			// Giỏ hàng không có hàng, hiển thị thông báo và chuyển hướng về trang chủ
+			return "redirect:/"; // Điều hướng về trang chủ
+		}
 		// Thêm giỏ hàng vào mô hình
 		model.addAttribute("cartProductViewDTO", cartProductViewDTO);
 

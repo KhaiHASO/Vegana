@@ -222,9 +222,10 @@
           </ul>
         </div>
         <div class="cart-proceed">
-          <a th:href="@{/checkout}" class="btn btn-inline"
-          ><i class="fas fa-check"></i><span>Proceed to Checkout</span></a
-          >
+          <a th:href="@{/checkout}" class="btn btn-inline"><i class="fas fa-check"></i><span>Proceed to Checkout</span></a>
+          <div th:if="${cartProductViewDTO == null or cartProductViewDTO.isEmpty()}" class="alert alert-warning">
+            <p>Your cart is empty. Please add products to your cart.</p>
+          </div>
         </div>
       </div>
     </div>

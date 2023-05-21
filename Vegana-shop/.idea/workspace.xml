@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="xong 1 nua cai gio hang, kho vai ca lon">
-      <change afterPath="$PROJECT_DIR$/../design-Vegana/ClassDiagram/Package entity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../design-Vegana/ClassDiagram/entity.uml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../design-Vegana/~$om6_BaoCao_QLBHTP-1.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/entity/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../design-Vegana/~WRL0873.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/ClassDiagram/Package entity.png" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/ClassDiagram/Package entity.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/ClassDiagram/entity.uml" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/ClassDiagram/entity.uml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../design-Vegana/Nhom6_BaoCao_QLBHTP-1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Nhom6_BaoCao_QLBHTP-1.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.ldb" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.ldb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +50,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -116,7 +111,7 @@
       <workItem from="1684552237800" duration="2084000" />
       <workItem from="1684554438543" duration="884000" />
       <workItem from="1684576588790" duration="12043000" />
-      <workItem from="1684648403906" duration="7439000" />
+      <workItem from="1684648403906" duration="10435000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>

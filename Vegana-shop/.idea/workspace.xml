@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="xong 1 nua cai gio hang, kho vai ca lon">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/service/impl/ProductRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../design-Vegana/ClassDiagram/Package entity.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../design-Vegana/ClassDiagram/entity.uml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../design-Vegana/~$om6_BaoCao_QLBHTP-1.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/entity/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/Nhom6_BaoCao_QLBHTP-1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Nhom6_BaoCao_QLBHTP-1.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.ldb" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.ldb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +41,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -42,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../T6LapTrinhDiDong/github/FoodApp/springbootAPI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../design-Vegana/ClassDiagram/entity.uml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -61,13 +69,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,7 +115,8 @@
       <workItem from="1684502314132" duration="20589000" />
       <workItem from="1684552237800" duration="2084000" />
       <workItem from="1684554438543" duration="884000" />
-      <workItem from="1684576588790" duration="9517000" />
+      <workItem from="1684576588790" duration="12043000" />
+      <workItem from="1684648403906" duration="7439000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>
@@ -147,6 +158,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="ok" />
     <MESSAGE value="xong 1 nua cai gio hang, kho vai ca lon" />
     <option name="LAST_COMMIT_MESSAGE" value="xong 1 nua cai gio hang, kho vai ca lon" />

@@ -218,13 +218,11 @@ public class ShoppingCartController extends CommonController {
 		Collection<CartProductViewDTO> cartProductViewDTO = cartProductViewRepository.getCartProductViewByCustomerId(CUSTOMER_ID);
 		Customer c = customersRepository.FindByEmail(principal.getName()).get();
 		//orderRepository.createOrderFromCart(c.getCustomerId(),order.getPhone());
-
 		order.setTotalPrice(tongdonhang(cartProductViewDTO));
 		order.setOrderDate(null);
 		order.setCustomer(c);
 		orderRepository.save(order);
 		order.getOrderId();
-
 		// Bước 2: Thêm chi tiết đơn hàng từ giỏ hàng
 		for (CartProductViewDTO cartItem : cartProductViewDTO) {
 			OrderDetail orderDetail = new OrderDetail();
@@ -235,7 +233,6 @@ public class ShoppingCartController extends CommonController {
 			orderDetail.setPrice(cartItem.getPrice());
 			orderDetail.setStatus("Đang Chờ Xử Lý");
 			orderDetailRepository.save(orderDetail);
-
 		}
 		// Bước 3: Xóa giỏ hàng sau khi hoàn tất đặt hàng
 		cartRepository.emptyCart(c.getCustomerId());

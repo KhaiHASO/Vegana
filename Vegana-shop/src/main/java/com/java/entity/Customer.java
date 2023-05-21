@@ -34,12 +34,10 @@ public class Customer implements UserDetails, CredentialsContainer {
 	private String photo = "";
 	private Boolean enabled;
 	private String roleId;
-	
-	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-	private Collection<Order> orders;
-	
+
 	@OneToMany(mappedBy = "id")
 	private Collection<Role> roles;
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

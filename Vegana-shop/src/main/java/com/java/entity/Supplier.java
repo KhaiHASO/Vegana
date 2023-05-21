@@ -29,7 +29,5 @@ public class Supplier implements Serializable{
 	private String name;
 	private String email;
 	private String phone;
-	@OneToMany(mappedBy="supplier", fetch=FetchType.EAGER)
-	private Collection<Product> products;
 
 }

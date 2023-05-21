@@ -27,6 +27,4 @@ public class Category implements Serializable {
 	private Integer categoryId;
 	private String name;
 
-	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
-	private Collection<Product> products;
 }

@@ -46,8 +46,4 @@ public class Product implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "supplierId")
 	private Supplier supplier;
-
-	@OneToMany(mappedBy = "product")
-	private Collection<OrderDetail> orderDetails;
-	
 }

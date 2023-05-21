@@ -19,6 +19,14 @@ public class Cart {
     private int productId;
     private int quantity;
     private double price;
+    @ManyToOne
+    @JoinColumn(name = "productId", insertable = false, updatable = false)
+    private Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "customerId", insertable = false, updatable = false)
+    private Customer customer;
+
 
     public Cart(String customerId, int productId, int quantity, double price) {
         this.customerId = customerId;

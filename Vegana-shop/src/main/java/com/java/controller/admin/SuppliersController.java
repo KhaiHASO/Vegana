@@ -57,10 +57,17 @@ public class SuppliersController extends CommonController{
 			return "admin/suppliers";
 		}
 
-		suppliersRepository.save(supplier);
-		model.addAttribute("message", "successful!");
-
-		return "redirect:/admin/suppliers";
+		try
+		{
+			suppliersRepository.save(supplier);
+			model.addAttribute("message", "successful!");
+			return "redirect:/admin/suppliers";
+		}
+		catch (Exception e)
+		{
+			model.addAttribute("message", "Không được thêm trùng!");
+			return "redirect:/admin/suppliers";
+		}
 	}
 	
 	// get Edit supplier

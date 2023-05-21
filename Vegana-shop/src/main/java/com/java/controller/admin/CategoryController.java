@@ -58,10 +58,17 @@ public class CategoryController extends CommonController{
 			return "admin/categories";
 		}
 
-		categoryRepository.save(category);
-		model.addAttribute("message", "successful!");
-
-		return "redirect:/admin/categories";
+		try
+		{
+			categoryRepository.save(category);
+			model.addAttribute("message", "successful!");
+			return "redirect:/admin/categories";
+		}
+		catch (Exception e)
+		{
+			model.addAttribute("message", "Không được thêm trùng!");
+			return "redirect:/admin/categories";
+		}
 	}
 	
 	// get Edit category

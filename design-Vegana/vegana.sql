@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 20/05/2023 21:09:27
+ Date: 21/05/2023 21:55:24
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `carts`  (
   INDEX `productId_idx`(`productId` ASC) USING BTREE,
   CONSTRAINT `customerId_fk` FOREIGN KEY (`customerId`) REFERENCES `customers` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `productId_fk` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 150 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 151 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of carts
@@ -48,14 +48,15 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories`  (
   `categoryId` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`categoryId`) USING BTREE
+  PRIMARY KEY (`categoryId`) USING BTREE,
+  UNIQUE INDEX `nameUnique`(`name` ASC) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
 BEGIN;
-INSERT INTO `categories` (`categoryId`, `name`) VALUES (1, 'Snack'), (2, 'Cookies'), (3, 'Milk'), (4, 'Drinks'), (5, 'Candy'), (8, 'demo cate');
+INSERT INTO `categories` (`categoryId`, `name`) VALUES (5, 'Candy'), (2, 'Cookies'), (8, 'demo cate'), (4, 'Drinks'), (10, 'Keo'), (3, 'Milk'), (1, 'Snack');
 COMMIT;
 
 -- ----------------------------
@@ -114,13 +115,13 @@ CREATE TABLE `orderdetails`  (
   INDEX `FK5pie1uapfd704usnm2loi3tex`(`productId` ASC) USING BTREE,
   CONSTRAINT `FK5pie1uapfd704usnm2loi3tex` FOREIGN KEY (`productId`) REFERENCES `products` (`productId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `orderDetailId` FOREIGN KEY (`orderId`) REFERENCES `orders` (`orderId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 99 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 100 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of orderdetails
 -- ----------------------------
 BEGIN;
-INSERT INTO `orderdetails` (`orderDetailId`, `price`, `quantity`, `status`, `total_price`, `orderId`, `productId`) VALUES (82, 54, 7, 'Đã Thanh Toán', 378, 49, 5), (83, 38, 7, 'Đã Thanh Toán', 266, 49, 6), (84, 72, 7, 'Đã Thanh Toán', 504, 49, 7), (85, 50, 7, 'Đã Thanh Toán', 350, 49, 8), (86, 54, 7, 'Đã Thanh Toán', 378, 49, 9), (87, 72, 7, 'Đã Thanh Toán', 504, 49, 10), (88, 57, 7, 'Đã Thanh Toán', 399, 49, 11), (89, 108, 7, 'Đã Thanh Toán', 756, 49, 18), (90, 225, 7, 'Đã Thanh Toán', 1575, 49, 48), (91, 100, 7, 'Đã Thanh Toán', 700, 49, 12), (92, 104.5, 7, 'Đã Thanh Toán', 731.5, 49, 13), (93, 108, 7, 'Đã Thanh Toán', 756, 49, 14), (94, 90, 7, 'Đã Thanh Toán', 630, 49, 15), (95, 142.5, 7, 'Đã Thanh Toán', 997.5, 49, 16), (96, 20, 4, 'Đã Thanh Toán', 80, 49, 17), (97, 190, 4, 'Đã Thanh Toán', 760, 49, 19), (98, 285, 4, 'Đã Thanh Toán', 1140, 49, 20);
+INSERT INTO `orderdetails` (`orderDetailId`, `price`, `quantity`, `status`, `total_price`, `orderId`, `productId`) VALUES (82, 54, 7, 'Đã Thanh Toán', 378, 49, 5), (83, 38, 7, 'Đã Thanh Toán', 266, 49, 6), (84, 72, 7, 'Đã Thanh Toán', 504, 49, 7), (85, 50, 7, 'Đã Thanh Toán', 350, 49, 8), (86, 54, 7, 'Đã Thanh Toán', 378, 49, 9), (87, 72, 7, 'Đã Thanh Toán', 504, 49, 10), (88, 57, 7, 'Đã Thanh Toán', 399, 49, 11), (89, 108, 7, 'Đã Thanh Toán', 756, 49, 18), (90, 225, 7, 'Đã Thanh Toán', 1575, 49, 48), (91, 100, 7, 'Đã Thanh Toán', 700, 49, 12), (92, 104.5, 7, 'Đã Thanh Toán', 731.5, 49, 13), (93, 108, 7, 'Đã Thanh Toán', 756, 49, 14), (94, 90, 7, 'Đã Thanh Toán', 630, 49, 15), (95, 142.5, 7, 'Đã Thanh Toán', 997.5, 49, 16), (96, 20, 4, 'Đã Thanh Toán', 80, 49, 17), (97, 190, 4, 'Đã Thanh Toán', 760, 49, 19), (98, 285, 4, 'Đã Thanh Toán', 1140, 49, 20), (99, 38, 3, 'Đã Thanh Toán', 114, 50, 6);
 COMMIT;
 
 -- ----------------------------
@@ -139,13 +140,13 @@ CREATE TABLE `orders`  (
   PRIMARY KEY (`orderId`) USING BTREE,
   INDEX `FK1bpj2iini89gbon333nm7tvht`(`customerId` ASC) USING BTREE,
   CONSTRAINT `customerID` FOREIGN KEY (`customerId`) REFERENCES `customers` (`customerId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 50 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
 BEGIN;
-INSERT INTO `orders` (`orderId`, `address`, `description`, `orderDate`, `phone`, `receiver`, `total_price`, `customerId`) VALUES (49, '01 Vo Van Ngan Street', 'giao muộn là xuống địa ngục', '2023-05-20', '0367151727', 'Khai Phan', 11486, 'khai00');
+INSERT INTO `orders` (`orderId`, `address`, `description`, `orderDate`, `phone`, `receiver`, `total_price`, `customerId`) VALUES (49, '01 Vo Van Ngan Street', 'giao muộn là xuống địa ngục', '2023-05-20', '0367151727', 'Khai Phan', 11486, 'khai00'), (50, '01 Vo Van Ngan Street', 'giao muộn là xuống địa ngục', '2023-05-21', '0367151727', 'Khai Phan', 114, 'khai00');
 COMMIT;
 
 -- ----------------------------
@@ -203,7 +204,8 @@ CREATE TABLE `suppliers`  (
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `supplierUnique`(`name` ASC) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
 -- ----------------------------

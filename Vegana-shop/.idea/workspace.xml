@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="xong 1 nua cai gio hang, kho vai ca lon">
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/Nhom6_BaoCao_QLBHTP-1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Nhom6_BaoCao_QLBHTP-1.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.ldb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,19 +63,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="VeganaShopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="vegana-shop" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.java.VeganaShopApplication" />
@@ -108,7 +97,8 @@
       <workItem from="1684552237800" duration="2084000" />
       <workItem from="1684554438543" duration="884000" />
       <workItem from="1684576588790" duration="12043000" />
-      <workItem from="1684648403906" duration="11313000" />
+      <workItem from="1684648403906" duration="11667000" />
+      <workItem from="1684715310192" duration="1716000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>

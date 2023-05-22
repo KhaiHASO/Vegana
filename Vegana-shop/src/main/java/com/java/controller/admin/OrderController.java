@@ -42,7 +42,7 @@ public class OrderController extends CommonController{
 		List<OrderDetail> orderDetails = orderDetailRepository.findAll();
 		model.addAttribute("orderDetails", orderDetails);
 		for (OrderDetail orderDetail : orderDetails) {
-			System.out.println(orderDetail.toString()); // In ra thông tin của mỗi đối tượng OrderDetail
+			//System.out.println(orderDetail.toString()); // In ra thông tin của mỗi đối tượng OrderDetail
 		}
 		return "admin/orders";
 	}

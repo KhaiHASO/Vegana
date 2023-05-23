@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0beefe93-3867-4096-98cb-6e2b5b4c6207" name="Default Changelist" comment="xong 1 nua cai gio hang, kho vai ca lon">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/config/SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/config/SuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/ShoppingCartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/admin/IndexAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/admin/IndexAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/controller/admin/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/controller/admin/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/repository/RevenueViewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/repository/RevenueViewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/service/impl/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/service/impl/ProductRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/Colab/2.3.2 SequenceDiagram DangNhap Communication.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Colab/2.3.2 SequenceDiagram DangNhap Communication.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/Colab/2.3.5 SequenceDiagram ChonSanPham Communication.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Colab/2.3.5 SequenceDiagram ChonSanPham Communication.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../design-Vegana/Nhom6_BaoCao_QLBHTP-1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Nhom6_BaoCao_QLBHTP-1.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/SequenceDiagram/2.2.2 SequenceDiagram DangNhap.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/SequenceDiagram/2.2.2 SequenceDiagram DangNhap.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../design-Vegana/SequenceDiagram/2.2.5 SequenceDiagram ChonSanPham.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/SequenceDiagram/2.2.5 SequenceDiagram ChonSanPham.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" beforeDir="false" afterPath="$PROJECT_DIR$/../design-Vegana/Source Architect/Vegana_Design.eapx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +102,7 @@
       <workItem from="1684749406671" duration="8910000" />
       <workItem from="1684768197363" duration="1688000" />
       <workItem from="1684769918904" duration="2814000" />
-      <workItem from="1684807208879" duration="7637000" />
+      <workItem from="1684807208879" duration="12114000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1683169210866</created>

@@ -1,5 +1,6 @@
 package com.java.repository;
 
+import com.java.entity.RevenueViewDTO;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -11,14 +12,16 @@ public class RevenueViewRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public double getTotalRevenue() {
+    public RevenueViewDTO getRevenueViewFromDB() {
         String sql = "SELECT total_revenue FROM revenue_view LIMIT 1";
         try {
-            return jdbcTemplate.queryForObject(sql, Double.class);
+            Double totalRevenue = jdbcTemplate.queryForObject(sql, Double.class);
+            RevenueViewDTO revenueDTO = new RevenueViewDTO();
+            revenueDTO.setTotal_revenue(totalRevenue);
+            return revenueDTO;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return 0;
+            return null;
         }
     }
-
 }

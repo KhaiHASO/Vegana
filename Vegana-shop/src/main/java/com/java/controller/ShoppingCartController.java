@@ -80,15 +80,9 @@ public class ShoppingCartController extends CommonController {
 		// Thêm giỏ hàng vào mô hình
 		model.addAttribute("cartProductViewDTO", cartProductViewDTO);
 
-		// Tính toán tổng giá trị giỏ hàng
-		double thanhtien = 0;
-		for (CartProductViewDTO cart : cartProductViewDTO) {
-			double price = cart.getTotalPrice();
-			thanhtien += price;
-		}
-		model.addAttribute("totalPrice", thanhtien);
+		model.addAttribute("totalPrice", tongdonhang(cartProductViewDTO));
 
-		// Các thông tin khác (nếu cần)
+		// Các thông tin khác (nếu cần)/*/
 		// model.addAttribute("totalCartItemWishs", wishListService.getCount());
 		// model.addAttribute("totalCartItems", shoppingCartService.getCount());
 		session = request.getSession();
@@ -120,7 +114,7 @@ public class ShoppingCartController extends CommonController {
 		// Đã đăng nhập, tiếp tục thêm sản phẩm vào giỏ hàng
 		Customer c = customersRepository.FindByEmail(principal.getName()).get();
 		String customerId = c.getCustomerId();
-		System.out.println(customerId);
+
 
 		Product product = productRepository.findById(productId).orElse(null);
 		session = request.getSession();

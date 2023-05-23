@@ -57,7 +57,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	List<Product> productsByCategory(Integer categoryId);
 
 	// Phương thức để thêm hoặc cập nhật sản phẩm bằng cách gọi stored procedure
-	 Void addOrUpdateProduct(Product product);
+	 Void addOrUpdateQuantityProduct(Product product);
 
 
 }

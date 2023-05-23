@@ -2,6 +2,7 @@ package com.java.controller.admin;
 
 import java.security.Principal;
 
+import com.java.entity.RevenueViewDTO;
 import com.java.repository.RevenueViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,9 +25,15 @@ public class IndexAdminController {
 		model.addAttribute("customer", new Customer());
 		Customer customer = customersRepository.FindByEmail(principal.getName()).get();
 		model.addAttribute("customer", customer);
-		double totalRevenue = revenueViewRepository.getTotalRevenue();
+		double totalRevenue;
+		RevenueViewDTO revenueViewDTO = revenueViewRepository.getRevenueViewFromDB();
+		if(revenueViewDTO ==null)
+		{
+			totalRevenue = 0;
+		}
+		else
+			totalRevenue = revenueViewDTO.getTotal_revenue();
 		model.addAttribute("revenue", totalRevenue);
-		
 		return "admin/index";
 	}
 

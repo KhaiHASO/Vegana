@@ -30,6 +30,7 @@ public class SuccessHandler implements AuthenticationSuccessHandler {
 				break;
 			}
 		}
+		//check role
 		if (hasRoleUser) {
 			redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "");
 		} else if (hasAdmin) {

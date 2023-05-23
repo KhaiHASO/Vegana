@@ -92,7 +92,7 @@ public class ProductController extends CommonController{
 
 		product.setImage(file.getOriginalFilename());
 		//Product p = productRepository.save(product);
-		Product p = productRepositoryImpl.addOrUpdateProduct(product);
+		Product p = productRepositoryImpl.addOrUpdateQuantityProduct(product);
 		System.out.println("Them addOrUpdateProduct");
 		if (null != p) {
 			model.addAttribute("message", "Update success");

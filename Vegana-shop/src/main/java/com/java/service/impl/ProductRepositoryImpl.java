@@ -16,7 +16,7 @@ public class ProductRepositoryImpl {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
-    public Product addOrUpdateProduct(Product product) {
+    public Product addOrUpdateQuantityProduct(Product product) {
         String sql = "CALL AddOrUpdateProduct(:description, :discount, :enteredDate, :image, :name, :price, :quantity, :categoryId, :supplierId)";
 
         MapSqlParameterSource params = new MapSqlParameterSource()

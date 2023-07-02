@@ -149,7 +149,6 @@ public class ShoppingCartController extends CommonController {
 		double discount = Double.parseDouble(payload.get("discount"));
 
 		// You should validate the input here
-
 		CartProductViewDTO cartProductViewDTO = new CartProductViewDTO();
 		cartProductViewDTO.setCustomerId(customerId);
 		cartProductViewDTO.setName(name);
